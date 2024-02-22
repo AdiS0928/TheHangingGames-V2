@@ -8,6 +8,7 @@ import Hangman from '../1_Assets/Thumbnails/Hangman.jpg';
 import MemoryGame from '../1_Assets/Thumbnails/MemoryGame.jpg';
 import Puzzle from '../1_Assets/Thumbnails/Puzzle.jpg';
 import Flappy from '../1_Assets/Thumbnails/Flappy.jpg';
+// import TicTacToe from  '../1_Assets/Thumbnails/TicTacToe.png';
 
 const buttonStyle = {
   height: '150px',
@@ -67,7 +68,15 @@ const Dashboard = () => {
             FLAPPY BIRD
           </Link>
         </div>
+
+        {/* <div style={{ ...buttonStyle, backgroundImage: `url(${TicTacToe})` }}>
+          <Link to="/TicTacToe" className='start-btn' style={{ textDecoration: 'none', zIndex: '3' }}>
+            TIC TAC TOE
+          </Link>
+        </div> */}
       </div>
+
+
 
     </div>
   );
