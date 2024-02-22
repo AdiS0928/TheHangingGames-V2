@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css'; // Import your CSS file
+import ButtonBox from '../../1_Assets/MainAssets/ButtonBox.png';
 
 const WhackAMoleGame = () => {
   const [holes, setHoles] = useState([]);
@@ -13,7 +14,7 @@ const WhackAMoleGame = () => {
   }, []);
 
   const randomTime = (min, max) => Math.round(Math.random() * (max - min) + min);
-
+ 
   const randomHole = (holes) => {
     const idx = Math.floor(Math.random() * holes.length);
     const hole = holes[idx];
@@ -54,12 +55,8 @@ const WhackAMoleGame = () => {
   return (
     <div className='mainwhack1'>
       <div className='mainwhack2'>
-        <h1 className='h1whack'>Whack-a-mole! </h1>
-        <h1 className="score" >Score: {score} </h1>
-
-        {/* <div className="controls">
-          <button onClick={startGame} style={{width: '100px', height: '30px', backgroundColor: 'black', color: '#00f526', border: '1px solid #00f526', cursor: 'grab', zIndex: '100000000000'}}>Start!</button>
-        </div> */}
+        <h1 className='h1whack'>WHACK-A-MOLE!</h1>
+        <h1 className="score" >SCORE: {score} </h1>
         
         <div className="game">
           {Array.from({ length: 6 }, (_, index) => (
@@ -70,7 +67,7 @@ const WhackAMoleGame = () => {
         </div>
       </div>
       
-      <button onClick={startGame} style={{width: '100px', height: '30px', backgroundColor: 'black', color: '#00f526', border: '1px solid #00f526', cursor: 'grab', zIndex: '100000000000'}}>Start!</button>
+      <button onClick={startGame}  style={{marginTop: '80px', backgroundColor: 'transparent', border: 'none', height: '90px', width: '370px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${ButtonBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'grab', fontSize: '30px', color: 'white'}} >START</button>
     </div>
   );
 };
