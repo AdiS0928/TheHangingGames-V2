@@ -73,7 +73,7 @@ body{
 
 .CloudLeft{
   transform: translatey(0px);
-	animation: floatCloudLeft 6s ease-in-out infinite;
+	animation: floatCloudLeft 8s ease-in-out infinite;
 }
 
 
@@ -90,7 +90,7 @@ body{
 }
 .CloudRight{
   transform: translatey(0px);
-	animation: floatCloudRight 6s ease-in-out infinite;
+	animation: floatCloudRight 8s ease-in-out infinite;
 }
 
 
@@ -98,37 +98,38 @@ body{
 
 
 /* skjskjsj  */
-
 @keyframes floatCloudLeftSnail {
 	0% {
-		transform: translatey(0px);
+		transform: translate(0px, 0px);
 	}
 	50% {
-		transform: translatey(-60px);
+		transform: translate(-60px, -60px);
 	}
 	100% {
-		transform: translatey(0px);
+		transform: translate(0px, 0px);
 	}
 }
 
-.CloudLeftSnail{
-  transform: translatey(0px);
-	animation: floatCloudLeftSnail 6s ease-in-out infinite;
+.CloudLeftSnail {
+	transform: translate(0px, 0px);
+	animation: floatCloudLeftSnail 8s ease-in-out infinite;
 }
+
 
 
 @keyframes floatCloudRightNoIdea {
-	0% {
-		transform: translatey(0px);
+  0% {
+		transform: translate(0px, 0px);
 	}
 	50% {
-		transform: translatey(60px);
+		transform: translate(60px, 60px);
 	}
 	100% {
-		transform: translatey(0px);
+		transform: translate(0px, 0px);
 	}
 }
-.CloudRightNoIdea{
-  transform: translatey(0px);
-	animation: floatCloudRightNoIdea 6s ease-in-out infinite;
+
+.CloudRightNoIdea {
+	transform: translate(0px, 0px);
+	animation: floatCloudRightNoIdea 8s ease-in-out infinite;
 }
