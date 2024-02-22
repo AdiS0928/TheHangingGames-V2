@@ -74,11 +74,15 @@ const Registration = () =>{
 
                     <div style={{width: '80vw', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', marginTop: '40px'}}>
 
-                        <div className="inputdiv">
-                            <input type="text" placeholder='NAME' id="Name" style={{textAlign: 'center', background:"transparent", border:"1px solid black", marginBottom:'15px', width:"80vw", height:'35px', color:"black", paddingLeft: '10px', paddingRight: '10px', backgroundColor: 'white', maxWidth: '700px'}}/> 
+                        <div style={{height: '100px', width: '30px'}}>
+
+                        </div>
+
+                        <div>
+                            <input type="text" placeholder='NAME' id="Name" style={{borderRadius: '10px', transform: 'skewX(-15deg)', textAlign: 'center', background:"transparent", border:"1px solid black", marginBottom:'15px', width:"80vw", height:'35px', color:"black", paddingLeft: '10px', paddingRight: '10px', backgroundColor: 'white', maxWidth: '700px'}}/> 
                         </div>
                         
-                        <div className="inputdiv">
+                        <div>
                             <input type="email" placeholder='EMAIL' id='email' style={{textAlign: 'center',background:"transparent", border:"1px solid black", marginBottom:'15px', width:"80vw", height:'35px', color:"black", paddingLeft: '10px', paddingRight: '10px', backgroundColor: 'white' , maxWidth: '700px'}} />
                         </div>
 
