@@ -7,6 +7,7 @@ import ButtonBox from '../1_Assets/MainAssets/ButtonBox.png';
 
 const Registration = () =>{
     const history = useNavigate();
+    // eslint-disable-next-line
     const [select, setSelect] = useState('')
 
     function handleSubmit(){
@@ -69,23 +70,23 @@ const Registration = () =>{
                     <div style={{width: '80vw', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', marginTop: '10px'}}>
 
                         <div style={{height: '90px', width: '500px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${InputBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                          <input type="text" placeholder='NAME' id="Name" style={{marginLeft: '-12px', textAlign: 'center', border: 'none',  background:"#0099FF", width:"370px", height:'55%', color:"black", paddingLeft: '10px', paddingRight: '10px', fontSize: '30px', color: 'white', marginTop: '10px'}}/> 
+                          <input type="text" placeholder='NAME' id="Name" style={{marginLeft: '-12px', textAlign: 'center', border: 'none',  background:"#0099FF", width:"370px", height:'55%', paddingLeft: '10px', paddingRight: '10px', fontSize: '30px', color: 'white', marginTop: '10px'}}/> 
                         </div>
 
                         <div style={{height: '90px', width: '500px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${InputBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '10px'}}>
-                          <input type="email" placeholder='EMAIL' id='email' style={{marginLeft: '-12px', textAlign: 'center', border: 'none',  background:"#0099FF", width:"370px", height:'55%', color:"black", paddingLeft: '10px', paddingRight: '10px', fontSize: '30px', color: 'white', marginTop: '10px'}}/> 
+                          <input type="email" placeholder='EMAIL' id='email' style={{marginLeft: '-12px', textAlign: 'center', border: 'none',  background:"#0099FF", width:"370px", height:'55%', paddingLeft: '10px', paddingRight: '10px', fontSize: '30px', color: 'white', marginTop: '10px'}}/> 
                         </div>
 
                         <div style={{height: '90px', width: '500px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${InputBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '10px'}}>
-                          <input className='specialFont' type="number" placeholder='MOBILE PHONE' id='no' style={{marginLeft: '-12px', textAlign: 'center', border: 'none',  background:"#0099FF", width:"370px", height:'55%', color:"black", paddingLeft: '10px', paddingRight: '10px', fontSize: '30px', color: 'white', marginTop: '10px'}}/> 
+                          <input className='specialFont' type="number" placeholder='MOBILE PHONE' id='no' style={{marginLeft: '-12px', textAlign: 'center', border: 'none',  background:"#0099FF", width:"370px", height:'55%', paddingLeft: '10px', paddingRight: '10px', fontSize: '30px', color: 'white', marginTop: '10px'}}/> 
                         </div>
 
                     </div>
 
                     
 
-                    <div style={{width: '300px', height: '20px', padding: '0', margin: '0'}}>
-                        <p id="error" style={{color: 'red', padding: '0', margin: '0', fontSize: '10px'}}></p>
+                    <div style={{width: '300px', height: '30px', padding: '0', margin: '0',  display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <p id="error" style={{color: '#fc0f64', padding: '0', margin: '0', fontSize: '15px'}}></p>
                     </div>
 
                     <button onClick={handleSubmit} id='SubmitButton' style={{backgroundColor: 'transparent', border: 'none', height: '90px', width: '370px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${ButtonBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '10px', cursor: 'grab', fontSize: '30px', color: 'white'}} >

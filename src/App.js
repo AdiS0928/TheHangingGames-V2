@@ -1,7 +1,7 @@
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom'; 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-// import Footer from './components/Footer';
+import Sidebar from './components/Sidebar';
 import Home from './components/Home';
 import Registration from './components/Registration';
 import Dashboard from './components/Dashboard';
@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Router>
-        {/* <Footer /> */}
+        <Sidebar />
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/Registration" element={<Registration />} />

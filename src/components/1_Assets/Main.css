@@ -1,9 +1,7 @@
 body{
   background-color: #0099FF;
-  /* background-image: url('./MainAssets/Wallpaper.jpg'); */
   color: white;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 
@@ -56,4 +54,81 @@ body{
 
 ::-ms-input-placeholder { /* Edge 12 -18 */
   color: red;
+}
+
+
+/* FLOATING CSS  */
+
+@keyframes floatCloudLeft {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-60px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+.CloudLeft{
+  transform: translatey(0px);
+	animation: floatCloudLeft 6s ease-in-out infinite;
+}
+
+
+@keyframes floatCloudRight {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(60px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+.CloudRight{
+  transform: translatey(0px);
+	animation: floatCloudRight 6s ease-in-out infinite;
+}
+
+
+
+
+
+/* skjskjsj  */
+
+@keyframes floatCloudLeftSnail {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-60px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+.CloudLeftSnail{
+  transform: translatey(0px);
+	animation: floatCloudLeftSnail 6s ease-in-out infinite;
+}
+
+
+@keyframes floatCloudRightNoIdea {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(60px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+.CloudRightNoIdea{
+  transform: translatey(0px);
+	animation: floatCloudRightNoIdea 6s ease-in-out infinite;
 }

@@ -29,6 +29,7 @@ WING.src =
 "https://www.myinstants.com/media/sounds/sfx_wing.mp3";
 
 // Functions
+// eslint-disable-next-line
 let frames = 0;
 
 let randomNum = function (min, max) {
@@ -390,12 +391,14 @@ const bird = {
   update() {
     if (pauseBtn.isPause === false) {
         if (!(state.current === state.gameOver)) {
+          // eslint-disable-next-line
             this.period = state.current == state.game ? 5 : 8;
             this.frame += this.frames % this.period ? 0 : 1;
             this.frame = this.frame % this.animate.length;
         }
-
+        // eslint-disable-next-line
         if (state.current === state.getReady) {
+          // eslint-disable-next-line
             this.y = this.y;
         } else {
             // Adjust the bird's falling speed (gravity) here
