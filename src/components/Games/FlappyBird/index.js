@@ -14,8 +14,16 @@ const btnContainer = document.querySelector(".mode_container .btn_container");
 const circle = document.querySelector(".mode_container .btn_container .circle");
 const modeTitle = document.querySelector(".mode_container span ");
 
-canvas.width = 370;
-canvas.height = 560;
+// Original dimensions
+const originalWidth = 370;
+const originalHeight = 560;
+
+// Calculate canvas width based on aspect ratio
+const canvasWidth = window.innerHeight * (originalWidth / originalHeight);
+
+// Set canvas dimensions
+canvas.width = canvasWidth;
+canvas.height = window.innerHeight;
 
 const sprite = new Image();
 sprite.src = "https://raw.githubusercontent.com/islamelsayyad/flappybird-canvas/05d4cdc9cbb4bf209fc9568a1a4f48a820c1930f/assets/img/flappybird-sprites.png";
@@ -42,7 +50,7 @@ let multipleTwoNum = function (num) {
 
 // Event Listener
 
-canvas.addEventListener("click", (e) => {
+window.addEventListener("click", (e) => {
   if (state.current === state.game) {
     let cltRect = canvas.getBoundingClientRect();
     let cltX = e.clientX - cltRect.left;
@@ -72,7 +80,7 @@ canvas.addEventListener("click", (e) => {
   }
 });
 
-canvas.addEventListener("click", (e) => {
+window.addEventListener("click", (e) => {
   let cltRect = canvas.getBoundingClientRect();
   let cltX = e.clientX - cltRect.left;
   let cltY = e.clientY - cltRect.top;
@@ -117,32 +125,32 @@ function darkMode() {
   localStorage.setItem("dark", "true");
 }
 
-function offDarkMode() {
-  circle.classList.remove("active");
-  btn.style.backgroundColor = "#3CCF4E";
-  modeTitle.textContent = "Light";
-  localStorage.setItem("dark", "false");
-}
+// function offDarkMode() {
+//   circle.classList.remove("active");
+//   btn.style.backgroundColor = "#3CCF4E";
+//   modeTitle.textContent = "Light";
+//   localStorage.setItem("dark", "false");
+// }
 
-btnContainer.addEventListener("click", () => {
-  circle.classList.toggle("active");
+// btnContainer.addEventListener("click", () => {
+//   circle.classList.toggle("active");
 
-  if (circle.classList.contains("active")) {
-    darkMode();
-    background.sX = localStorage.setItem("sX", 146);
-    background.sX = 146;
-  } else {
-    offDarkMode();
-    background.sX = localStorage.setItem("sX", 0);
-    background.sX = 0;
-  }
-});
+//   if (circle.classList.contains("active")) {
+//     darkMode();
+//     background.sX = localStorage.setItem("sX", 146);
+//     background.sX = 146;
+//   } else {
+//     offDarkMode();
+//     background.sX = localStorage.setItem("sX", 0);
+//     background.sX = 0;
+//   }
+// });
 
-if (localStorage.getItem("dark") === "true") {
-  darkMode();
-} else {
-  offDarkMode();
-}
+// if (localStorage.getItem("dark") === "true") {
+//   darkMode();
+// } else {
+//   offDarkMode();
+// }
 
 // Objects
 // States
@@ -617,6 +625,7 @@ const pauseBtn = {
 };
 
 // Score
+// Score
 const score = {
   current: 0,
   high: parseInt(localStorage.getItem("high")) || 0,
@@ -629,32 +638,34 @@ const score = {
     if (state.current === state.game) {
       ctx.font = "42px Flappy Bird";
       ctx.lineWidth = 2;
-      ctx.fillText(this.current, canvas.width / 2 - 5, 43);
-      ctx.strokeText(this.current, canvas.width / 2 - 5, 43);
+      ctx.textAlign = "center"; // Center align the text
+      ctx.fillText(this.current, canvas.width / 2, 43);
+      ctx.strokeText(this.current, canvas.width / 2, 43);
     }
     if (state.current === state.gameOver) {
       ctx.font = "25px Flappy Bird";
       ctx.lineWidth = 1;
 
+      ctx.textAlign = "right"; // Align the high score and current score to the right
       ctx.fillText(
         this.high,
-        gameOverMsg.x + gameOverMsg.width - 58,
+        gameOverMsg.x + gameOverMsg.width - 20,
         gameOverMsg.y + gameOverMsg.height - 34
       );
       ctx.strokeText(
         this.high,
-        gameOverMsg.x + gameOverMsg.width - 58,
+        gameOverMsg.x + gameOverMsg.width - 20,
         gameOverMsg.y + gameOverMsg.height - 34
       );
 
       ctx.fillText(
         this.current,
-        gameOverMsg.x + gameOverMsg.width - 58,
+        gameOverMsg.x + gameOverMsg.width - 20,
         gameOverMsg.y + 54
       );
       ctx.strokeText(
         this.current,
-        gameOverMsg.x + gameOverMsg.width - 58,
+        gameOverMsg.x + gameOverMsg.width - 20,
         gameOverMsg.y + 54
       );
     }
@@ -670,6 +681,7 @@ const score = {
     this.current = 0;
   }
 };
+
 
 // Functions
 
@@ -711,7 +723,7 @@ animate();
       <div class="container">
       <canvas id="grid"></canvas>
     
-      <footer>
+      {/* <footer>
         <div class="footer_container">
           <p>
             Flappybird
@@ -726,7 +738,7 @@ animate();
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
     )
 }
