@@ -69,15 +69,15 @@ const Registration = () =>{
                     <div style={{width: '80vw', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', marginTop: '10px'}}>
 
                         <div style={{height: '90px', width: '500px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${InputBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                          <input type="text" placeholder='NAME' id="Name" style={{marginLeft: '-12px', textAlign: 'center', border: 'none',  background:"#0099FF", width:"400px", height:'55%', color:"black", paddingLeft: '10px', paddingRight: '10px', fontSize: '30px', color: 'white'}}/> 
+                          <input type="text" placeholder='NAME' id="Name" style={{marginLeft: '-12px', textAlign: 'center', border: 'none',  background:"#0099FF", width:"370px", height:'55%', color:"black", paddingLeft: '10px', paddingRight: '10px', fontSize: '30px', color: 'white', marginTop: '10px'}}/> 
                         </div>
 
                         <div style={{height: '90px', width: '500px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${InputBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '10px'}}>
-                          <input type="email" placeholder='EMAIL' id='email' style={{marginLeft: '-12px', textAlign: 'center', border: 'none',  background:"#0099FF", width:"400px", height:'55%', color:"black", paddingLeft: '10px', paddingRight: '10px', fontSize: '30px', color: 'white'}}/> 
+                          <input type="email" placeholder='EMAIL' id='email' style={{marginLeft: '-12px', textAlign: 'center', border: 'none',  background:"#0099FF", width:"370px", height:'55%', color:"black", paddingLeft: '10px', paddingRight: '10px', fontSize: '30px', color: 'white', marginTop: '10px'}}/> 
                         </div>
 
                         <div style={{height: '90px', width: '500px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${InputBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '10px'}}>
-                          <input className='specialFont' type="number" placeholder='MOBILE PHONE' id='no' style={{marginLeft: '-12px', textAlign: 'center', border: 'none',  background:"#0099FF", width:"400px", height:'55%', color:"black", paddingLeft: '10px', paddingRight: '10px', fontSize: '30px', color: 'white'}}/> 
+                          <input className='specialFont' type="number" placeholder='MOBILE PHONE' id='no' style={{marginLeft: '-12px', textAlign: 'center', border: 'none',  background:"#0099FF", width:"370px", height:'55%', color:"black", paddingLeft: '10px', paddingRight: '10px', fontSize: '30px', color: 'white', marginTop: '10px'}}/> 
                         </div>
 
                     </div>
@@ -88,7 +88,7 @@ const Registration = () =>{
                         <p id="error" style={{color: 'red', padding: '0', margin: '0', fontSize: '10px'}}></p>
                     </div>
 
-                    <button onClick={handleSubmit} id='SubmitButton' style={{backgroundColor: 'transparent', border: 'none', height: '90px', width: '500px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${ButtonBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '10px', cursor: 'grab', fontSize: '30px', color: 'white'}} >
+                    <button onClick={handleSubmit} id='SubmitButton' style={{backgroundColor: 'transparent', border: 'none', height: '90px', width: '370px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${ButtonBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '10px', cursor: 'grab', fontSize: '30px', color: 'white'}} >
                         SUBMIT
                     </button>
 
