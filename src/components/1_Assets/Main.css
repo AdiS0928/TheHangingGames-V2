@@ -184,3 +184,8 @@ body{
 .GUGUMainLogo{
 	animation: scaleAnimation 3s infinite alternate;
 } 
+
+
+input:focus {
+	outline: none;
+}
