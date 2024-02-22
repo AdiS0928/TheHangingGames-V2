@@ -3,7 +3,6 @@ import './styles.scss';
 import $ from 'jquery';
 
 const HangmanGame = () => {
-	// var Hintof = "Hello";
 	// eslint-disable-next-line 
   const [puzzleList, setPuzzleList] = useState([
 	"POWERPUFF GIRLS",
@@ -136,11 +135,64 @@ const HangmanGame = () => {
       totalIncorrect++;
     }
 
-    function newPuzzle() {
-      var newPuzzle = puzzleList.splice(Math.floor(Math.random() * puzzleList.length), 1);
-	  console.log(newPuzzle)
-      return newPuzzle[0];
-    }
+	function newPuzzle() {
+		var newPuzzle = puzzleList.splice(Math.floor(Math.random() * puzzleList.length), 1);
+		console.log(newPuzzle);
+		var Hintof = newPuzzle[0];
+		console.log(Hintof);
+	  
+		if (Hintof === 'DEXTERS LABORATORY') {
+			console.log("DEXTERS LABORATORY");
+			document.getElementById("Hintof").innerHTML = "DEE DEE, DID YOU TOUCH ANYTHING?"
+		}
+
+		if (Hintof === 'VIOLETS ARE BLUE') {
+			console.log("VIOLETS ARE BLUE");
+			document.getElementById("Hintof").innerHTML = "ROSES ARE RED, ….."
+		}
+
+		if (Hintof === 'FLINTSTONE') {
+			console.log("FLINTSTONE");
+			document.getElementById("Hintof").innerHTML = "YABBA DABBA DOOO…."
+		}
+
+		if (Hintof === 'GEEK') {
+			console.log("GEEK");
+			document.getElementById("Hintof").innerHTML = "CALLING SOMEONE UNCOOL IN THE 80S? YOU MIGHT CALL THEM THIS."
+		}
+
+		if (Hintof === 'FINDING NEMO') {
+			console.log("FINDING NEMO");
+			document.getElementById("Hintof").innerHTML = "'JUST KEEP SWIMMING.' THIS IS A FAMOUS DIALOGUE FROM…"
+		}
+
+		if (Hintof === 'HAKUNA MATATA') {
+			console.log("HAKUNA MATATA");
+			document.getElementById("Hintof").innerHTML = "TIMON AND PUMBA’S SONG."
+		}
+
+		if (Hintof === 'TO INFINITY AND BEYOND') {
+			console.log("TO INFINITY AND BEYOND");
+			document.getElementById("Hintof").innerHTML = "FAMOUS PHRASE OF BUZZ LIGHTYEAR FROM TOY STORY."
+		}
+
+		if (Hintof === 'YA FILTHY ANIMAL') {
+			console.log("YA FILTHY ANIMAL");
+			document.getElementById("Hintof").innerHTML = "COMPLETE THIS DIALOGUE FROM HOME ALONE<br></br> 'KEEP THE CHANGE, ___________!'"
+		}
+
+		if (Hintof === 'SMELLY CAT') {
+			console.log("SMELLY CAT");
+			document.getElementById("Hintof").innerHTML = "PHOEBE BUFFET’S SONG."
+		}
+
+		if (Hintof === 'POWERPUFF GIRLS') {
+			console.log("POWERPUFF GIRLS");
+			document.getElementById("Hintof").innerHTML = "SUGAR, SPICE, AND EVERYTHING NICE!"
+		}
+		return Hintof;
+	  }
+	  
 
     function parseSVG(s) {
       var div = document.createElementNS('http://www.w3.org/1999/xhtml', 'div');
@@ -188,7 +240,7 @@ const HangmanGame = () => {
             <button style={{marginTop: '15px'}} id="game-over-replay">START OVER</button>
           </div>
         </div>
-		<p className='Hint' style={{fontSize: '25px'}}>I am the Hint</p>
+		<p className='Hintof' id='Hintof' style={{fontSize: '25px'}}>I am the Hint</p>
         <div class="hangman-puzzle">
         </div>
         <div class="hangman-letters">
