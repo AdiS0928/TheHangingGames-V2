@@ -3,11 +3,13 @@ import './styles.scss';
 import $ from 'jquery';
 
 const HangmanGame = () => {
+	// var Hintof = "Hello";
+	// eslint-disable-next-line 
   const [puzzleList, setPuzzleList] = useState([
 	"POWERPUFF GIRLS",
-    "DEXTER’S LABORATORY",
+    "DEXTERS LABORATORY",
     "VIOLETS ARE BLUE",
-    "FLINSTONE",
+    "FLINTSTONE",
     "GEEK",
     "FINDING NEMO",
     "HAKUNA MATATA",
@@ -16,11 +18,17 @@ const HangmanGame = () => {
     "SMELLY CAT"
   ]);
 
+//   eslint-disable-next-line 
   const [puzzle, setPuzzle] = useState('');
+//   eslint-disable-next-line 
   const [puzzleLetterContainers, setPuzzleLetterContainers] = useState([]);
+//   eslint-disable-next-line 
   const [previouslyChosen, setPreviouslyChosen] = useState('');
+//   eslint-disable-next-line 
   const [totalIncorrect, setTotalIncorrect] = useState(0);
+//   eslint-disable-next-line 
   const [remainingBlanks, setRemainingBlanks] = useState(0);
+//   eslint-disable-next-line 
   const [hangmanPartsRendered, setHangmanPartsRendered] = useState([]);
 
   useEffect(() => {
@@ -85,6 +93,7 @@ const HangmanGame = () => {
 
       puzzle.split('').forEach((i) => {
         var thisClass = "hangman-puzzle-letters";
+		// eslint-disable-next-line 
         if (i == ' ') {
           thisClass += ' space';
           remainingBlanks--;
@@ -114,6 +123,7 @@ const HangmanGame = () => {
     function checkLetter(solution, thisLetter) {
       var indexes = [];
       solution.split('').forEach(function (item, index) {
+		// eslint-disable-next-line 
         if (item == thisLetter) {
           indexes.push(index);
         }
@@ -128,6 +138,7 @@ const HangmanGame = () => {
 
     function newPuzzle() {
       var newPuzzle = puzzleList.splice(Math.floor(Math.random() * puzzleList.length), 1);
+	  console.log(newPuzzle)
       return newPuzzle[0];
     }
 
@@ -145,6 +156,7 @@ const HangmanGame = () => {
         $('.game-over-lost').show();
         $('.game-over-won').hide();
         $('.hangman-puzzle-letters').each(function (index) {
+			// eslint-disable-next-line 
           if ($(this).html() == "&nbsp;" && !$(this).hasClass("space")) {
             $(this).html(puzzle.charAt(index));
             $(this).addClass('game-lost');
@@ -157,9 +169,8 @@ const HangmanGame = () => {
       }
       $('.game-over').show();
     }
-
+	// eslint-disable-next-line 
   }, []); // Run only once when the component mounts
-
   return (
     <div className='mainhangman'>
       <div class="hangman">
@@ -172,11 +183,12 @@ const HangmanGame = () => {
             </svg>
           </div>
           <div class="game-over" style={{ display: 'none' }}>
-            <p class="game-over-won">You won! :)</p>
-            <p class="game-over-lost">You lost :(</p>
-            <button id="game-over-replay">Start Over</button>
+            <p class="game-over-won">YOU WON! 🎉</p>
+            <p class="game-over-lost">YOU LOST 😔</p>
+            <button style={{marginTop: '15px'}} id="game-over-replay">START OVER</button>
           </div>
         </div>
+		<p className='Hint' style={{fontSize: '25px'}}>I am the Hint</p>
         <div class="hangman-puzzle">
         </div>
         <div class="hangman-letters">

@@ -20,17 +20,20 @@ $light-green: #b3e5dc;
     text-align: center;
     margin: 30px auto;
     div {
-        background: rgb(26, 26, 26);
+        background: white;
+		color: black;
         @extend %shadow;
         display: inline-block;
-        padding: 8px 16px 10px;
+		height: 40px;
+		padding-top: 20px;
+		width: 60px;
         margin: 3px;
-        font-weight: bold;
-        font-size: 26px;
+        font-weight: 300;
+        font-size: 30px;
         cursor: pointer;
         position: relative;
         transition: .2s;
-        border-radius: 3px;
+        border-radius: 10px;
       &:hover {
         background: #565656;
       }
@@ -43,7 +46,7 @@ $light-green: #b3e5dc;
        &:before {
         content: "\002716";
         position: absolute;
-        top: 50%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         font-weight: normal;
@@ -75,16 +78,16 @@ $light-green: #b3e5dc;
 		flex-wrap: wrap;
     &-letters {
       display: inline-block;
-			padding: 8px 16px 10px;
+			padding: 5px;
 			margin: 4px;
       border-bottom: 2px solid rgb(255, 255, 255);
       height: 50px;
       text-align: center;
       font-weight: bold;
       font-size: 30px;
-      width: 30px;
+    //   width: 30px;
       flex: 1 auto;
-			padding-bottom: 3px;
+			padding-bottom: 0px;
 			&.space {
 				border: 0;
 			}
@@ -108,18 +111,22 @@ $light-green: #b3e5dc;
 			padding: 60px 20px;
 			width: 100%;
 			max-width: 400px;
-			background: rgba($light-green, .95);
+			border-radius: 20px;
+			background: rgba(black, .95);
 			@extend %shadow;
 			
 			p {
 				font-size: 32px;
-				font-weight: bold;
+				font-weight: 300;
 			}
 			button {
 				background: darken($light-green, 30%);
 				color: white;
-				padding: 20px 30px;
-				font-size: 32px;
+				border-radius: 10px;
+				padding-top: 10px;
+				padding-left: 30px;
+				padding-right: 30px;
+				font-size: 25px;
 				border: 0;
 				@extend %shadow;
 				cursor: pointer;
