@@ -81,7 +81,7 @@ export default function Puzzle(){
       dt.classList.add('title');
       dt.appendChild(document.createTextNode(params.title));
       let that = this;
-      dt.addEventListener("click",()=>that.display());
+      dt.addEventListener("click",()=>params.lines[0].func());
       divMenu.appendChild(dt);
       this.list = [];  
       for (let k = 0; k < params.lines.length; ++k){
@@ -104,6 +104,7 @@ export default function Puzzle(){
     
     }
     Menu.prototype.display = function() {
+      // this.returnFunct(12)
         this.divMenu.classList.add('open');
     
     }
@@ -705,12 +706,12 @@ export default function Puzzle(){
         this.menu = new Menu({
           parentDiv: this.divGame,
           idDivMenu: "divmenu",
-          title: "MENU",
+          title: "START",
           lineOffset: 30,
           lineStep: 30,
           lines: [
             // {text: "load image", func: this.loadImage()},
-            {text: "12 piece", func: this.returnFunct(12)},
+            {text: "12 piece", func: this.returnFunct(25)},
             // {text: "25 piece", func: this.returnFunct(25)},
             // {text: "50 piece", func: this.returnFunct(50)},
             // {text: "100 piece", func: this.returnFunct(100)},
