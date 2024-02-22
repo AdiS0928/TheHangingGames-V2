@@ -1,0 +1,159 @@
+// *{box-sizing: border-box;}
+%shadow {
+  box-shadow: 2px 2px 5px rgba(0,0,0,.5);
+}
+$light-green: #b3e5dc;
+
+.mainhangman{
+	background-image:url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2216%22%20height=%2216%22%20viewBox=%220%200%2016%2016%22%3E%3Cg%20fill=%22#84c6ad%22%3E%3Cpolygon%20points=%2212%200%200%2012%200%2016%2016%200%22/%3E%3Cpolygon%20points=%2212%2016%2016%2016%2016%2012%22/%3E%3Cpolygon%20points=%220%204%200%208%208%200%204%200%22/%3E%3Cpolygon%20points=%2216%208%2016%204%204%2016%208%2016%22/%3E%3C/g%3E%3C/svg%3E');
+	background-color:#000000;
+    line-height: 1;
+}
+
+.hangman {
+    max-width: 700px;
+	width: 90%;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+	text-align: center;
+	justify-content: center;
+    &-letters {
+    text-align: center;
+    margin: 30px auto;
+    div {
+        background: rgb(26, 26, 26);
+        @extend %shadow;
+        display: inline-block;
+        padding: 8px 16px 10px;
+        margin: 3px;
+        font-weight: bold;
+        font-size: 26px;
+        cursor: pointer;
+        position: relative;
+        transition: .2s;
+        border-radius: 3px;
+      &:hover {
+        background: #565656;
+      }
+    }
+    .disabled {
+      color: #888;
+      background: #ccc;
+      cursor: default;
+      pointer-events: none;
+       &:before {
+        content: "\002716";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: normal;
+        font-size: 32px;
+        color: #992020;
+      }
+      &.correct {
+        background: $light-green;
+        &:before {
+          color: #298772;
+          content: '\002714';
+        }
+      }
+    }
+		@media(max-width: 640px) {
+			div {
+				padding: 6px 12px 8px;
+				font-size: 18px;
+			}
+			.disabled:before {
+				font-size: 26px;
+			}
+		}
+  }
+  &-puzzle {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+		flex-wrap: wrap;
+    &-letters {
+      display: inline-block;
+			padding: 8px 16px 10px;
+			margin: 4px;
+      border-bottom: 2px solid rgb(255, 255, 255);
+      height: 50px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 30px;
+      width: 30px;
+      flex: 1 auto;
+			padding-bottom: 3px;
+			&.space {
+				border: 0;
+			}
+			&.game-lost {
+				color: darken($light-green, 50%);
+			}
+			@media(max-width: 640px) {
+				font-size: 24px;
+				width: 20px;
+				height: 36px;
+				padding: 6px 0 8px;
+			}
+    }
+  }
+	&-results {
+		text-align: center;
+		position: relative;
+		.game-over {
+			position: absolute;
+			top: 50%; left: 50%; transform: translate(-50%, -50%);
+			padding: 60px 20px;
+			width: 100%;
+			max-width: 400px;
+			background: rgba($light-green, .95);
+			@extend %shadow;
+			
+			p {
+				font-size: 32px;
+				font-weight: bold;
+			}
+			button {
+				background: darken($light-green, 30%);
+				color: white;
+				padding: 20px 30px;
+				font-size: 32px;
+				border: 0;
+				@extend %shadow;
+				cursor: pointer;
+				transition: .2s;
+				&:hover {
+					background: darken($light-green, 15%);
+				}
+			}
+			@media(max-width: 640px) {
+				padding: 30px;
+				p {
+					margin-top: 0;
+				}
+				button {
+					padding: 10px 20px;
+					font-size: 26px;
+				}
+			}
+		}
+	}
+	&-hangman {
+		max-width: 400px;
+		margin: 0 auto;
+		@media(max-width: 640px) {
+			padding: 0 50px;
+		}
+	}
+	&-svg {
+		width: 100%;
+		height: auto;
+	}
+	@media(max-width: 640px) {
+		width: 95%;
+	}
+}

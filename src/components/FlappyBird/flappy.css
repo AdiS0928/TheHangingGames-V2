@@ -1,0 +1,16 @@
+
+body {
+  margin: 0;
+  text-align: center;
+  user-select: none;
+}
+header {
+  margin: 0 auto;
+  width: 431px;
+}
+.score-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 6px;
+  background: #000000;
+}

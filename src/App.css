@@ -1,0 +1,34 @@
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Add these styles to ensure the grid is displayed correctly */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px; /* Adjust the gap as needed */
+}
+
+.row {
+  display: flex;
+}
+
+.tile {
+  flex: 1;
+  aspect-ratio: 1 / 1; /* Ensures the square aspect ratio */
+  margin: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd; /* Add a border for better visibility */
+}
+
+
+
+.tile.selected {
+  background-color: #7fd3f7;
+}
+
