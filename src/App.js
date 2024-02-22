@@ -4,19 +4,12 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import Footer from './components/Footer/index.js';
 import Home from './components/Home';
 
-import Crossword from './components/Crossword'; 
-import Wordsearch from './components/Wordsearch'; 
 import WhackAMole from './components/WhackAMole'; 
 import Hangman from './components/Hangman'; 
 import MemoryGame from './components/MemoryGame'; 
-import TicTacToe from './components/TicTacToe'; 
-import TriviaQuiz from './components/TriviaQuiz/index.js';
-import TriviaQuizScore from './components/TriviaQuiz/score.js';
-import FightingGame from './components/FightingGame';
 import FlappyBird from './components/FlappyBird/index.js';
 import Puzzle from './components/Puzzle/index.js';
-import Match3 from './components/Match3/index.js';
-import Slot from './components/Slot/index.js';
+
 function App() {
   return (
     <>

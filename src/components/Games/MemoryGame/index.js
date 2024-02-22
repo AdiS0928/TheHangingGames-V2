@@ -45,20 +45,33 @@ export default function MemoryGame(){
                 }
               } 
               check(){
-                let finalizedFrameworks = this.state.finalizedFrameworks
-                // eslint-disable-next-line
-                if((this.state.openedFrameworks[0].name == this.state.openedFrameworks[1].name) && (this.state.openedFrameworks[0].index != this.state.openedFrameworks[1].index)){
-                  finalizedFrameworks[this.state.openedFrameworks[0].index].complete = true
-                  finalizedFrameworks[this.state.openedFrameworks[1].index].complete = true
-                }else {
-                  finalizedFrameworks[this.state.openedFrameworks[0].index].close = true
-                  finalizedFrameworks[this.state.openedFrameworks[1].index].close = true
+                let finalizedFrameworks = this.state.finalizedFrameworks;
+            
+                // Check if all cards are matched
+                if (finalizedFrameworks.every(card => card.complete)) {
+                    // If all cards are matched, show the congratulations alert
+                    setTimeout(() => {
+                        alert('Congratulations! You have won!');
+                    }, 500);
+                } else {
+                    // Check if the two opened cards match
+                    if (
+                        this.state.openedFrameworks[0].name === this.state.openedFrameworks[1].name &&
+                        this.state.openedFrameworks[0].index !== this.state.openedFrameworks[1].index
+                    ) {
+                        finalizedFrameworks[this.state.openedFrameworks[0].index].complete = true;
+                        finalizedFrameworks[this.state.openedFrameworks[1].index].complete = true;
+                    } else {
+                        finalizedFrameworks[this.state.openedFrameworks[0].index].close = true;
+                        finalizedFrameworks[this.state.openedFrameworks[1].index].close = true;
+                    }
+            
+                    this.setState({
+                        finalizedFrameworks,
+                        openedFrameworks: []
+                    });
                 }
-                this.setState({
-                  finalizedFrameworks,
-                  openedFrameworks: []
-                })
-              }
+            }
               start(){
                 let finalizedFrameworks = [];
                 // eslint-disable-next-line
