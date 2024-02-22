@@ -133,3 +133,32 @@ body{
 	transform: translate(0px, 0px);
 	animation: floatCloudRightNoIdea 8s ease-in-out infinite;
 }
+
+
+
+
+/* BUTTON CSS  */
+.start-btn{
+    text-align: center;
+	font-size: 24px;
+  	display: inline-block;
+    font-weight: 300;
+    padding: 20px 10px 10px 10px ;
+    width: 200px;
+    background-color: lightgray;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: gray;
+    -webkit-border-radius: 7px;
+	  -moz-border-radius: 7px;
+	  -o-border-radius: 7px;
+	  border-radius: 7px;
+    box-shadow: 0 .2em gray; 
+    cursor: pointer;
+	letter-spacing: 3px;
+}
+
+.start-btn:active {
+	box-shadow: none;
+	position: relative;
+	top: .2em;
+}

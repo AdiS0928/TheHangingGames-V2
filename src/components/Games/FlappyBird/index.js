@@ -10,6 +10,7 @@ const canvas = document.getElementById("grid");
 const ctx = canvas.getContext("2d");
 
 const btn = document.querySelector(".mode_container .btn_container .btn");
+// eslint-disable-next-line
 const btnContainer = document.querySelector(".mode_container .btn_container");
 const circle = document.querySelector(".mode_container .btn_container .circle");
 const modeTitle = document.querySelector(".mode_container span ");
@@ -117,7 +118,7 @@ window.addEventListener("click", (e) => {
     }
   }
 });
-
+// eslint-disable-next-line
 function darkMode() {
   circle.classList.add("active");
   btn.style.backgroundColor = "#FBDF07";

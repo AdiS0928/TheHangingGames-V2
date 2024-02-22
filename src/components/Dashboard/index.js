@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../1_Assets/Main.css';
-import Logo from '../1_Assets/MainAssets/Logo2.png';
+import Logo from '../1_Assets/MainAssets/HomeLogo.png';
 
 import Whackamole from '../1_Assets/Thumbnails/Whackamole.jpg';
 import Hangman from '../1_Assets/Thumbnails/Hangman.jpg';
@@ -9,69 +9,66 @@ import MemoryGame from '../1_Assets/Thumbnails/MemoryGame.jpg';
 import Puzzle from '../1_Assets/Thumbnails/Puzzle.jpg';
 import Flappy from '../1_Assets/Thumbnails/Flappy.jpg';
 
+const buttonStyle = {
+  height: '150px',
+  width: '250px',
+  display: 'flex',
+  flexDirection: 'column',
+  margin: '5px',
+  padding: '10px',
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  borderRadius: '40px',
+  border: '1px solid grey',
+  // clipPath: 'polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%)',
 
-const Dashboard = () => { 
+  clipPath: 'polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%)',
+  
+};
 
+const Dashboard = () => {
   return (
-    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100%', width: '100vw'}}>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100vh', width: '100vw' }}>
 
-        <img style={{width: '100px', marginTop: '60px'}} alt='thhlogo' src={Logo}/>
+      <img style={{ width: '250px' }} alt='GUGULogo' src={Logo} />
 
-        <h1 style={{width: '100%', textAlign:'center'}}>THE HANGING GAMES</h1>  
-
-        <div className='HomeMainDiv'>
-
-
-
-          <div style={{height: '100px', width: '160px', display: 'flex', flexDirection: 'column', margin: '5px', padding: '10px', justifyContent: 'center', alignItems: 'center', backgroundImage: `url(${Whackamole})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', borderRadius: '15px', border: '1px solid grey'}}>
-            <Link to="/whackamole" className='start-btn' style={{textDecoration: 'none', zIndex: '3'}}>
-              WHACK-A-MOLE
-            </Link>
-            <div style={{height: '100px', width: '160px', display: 'flex', flexDirection: 'row', margin: '5px', padding: '10px', zIndex: '1', position: 'absolute', justifyContent: 'flex-end', alignItems: 'flex-end', borderRadius: '15px', opacity: '0.4'}}>
-              
-            </div>
-          </div>
-
-          <div style={{height: '100px', width: '160px', display: 'flex', flexDirection: 'column', margin: '5px', padding: '10px', justifyContent: 'center', alignItems: 'center', backgroundImage: `url(${Hangman})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', borderRadius: '15px', border: '1px solid grey'}}>
-            <Link to="/hangman" className='start-btn' style={{textDecoration: 'none', zIndex: '3'}}>
-              HANGMAN
-            </Link>
-            <div style={{height: '100px', width: '160px', display: 'flex', flexDirection: 'row', margin: '5px', padding: '10px', zIndex: '1', position: 'absolute', justifyContent: 'flex-end', alignItems: 'flex-end', borderRadius: '15px', opacity: '0.4'}}>
-              
-            </div>
-          </div>
-
-          <div style={{height: '100px', width: '160px', display: 'flex', flexDirection: 'column', margin: '5px', padding: '10px', justifyContent: 'center', alignItems: 'center', backgroundImage: `url(${MemoryGame})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', borderRadius: '15px', border: '1px solid grey'}}>
-            <Link to="/memorygame" className='start-btn' style={{textDecoration: 'none', zIndex: '3'}}>
-              MEMORY GAME
-            </Link>
-            <div style={{height: '100px', width: '160px', display: 'flex', flexDirection: 'row', margin: '5px', padding: '10px', zIndex: '1', position: 'absolute', justifyContent: 'flex-end', alignItems: 'flex-end', borderRadius: '15px', opacity: '0.4'}}>
-              
-            </div>
-          </div>
-
-
-          <div style={{height: '100px', width: '160px', display: 'flex', flexDirection: 'column', margin: '5px', padding: '10px', justifyContent: 'center', alignItems: 'center', backgroundImage: `url(${Puzzle})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', borderRadius: '15px', border: '1px solid grey'}}>
-            <Link to="/puzzle" className='start-btn' style={{textDecoration: 'none', zIndex: '3'}}>
-              PUZZLE GAME
-            </Link>
-            <div style={{height: '100px', width: '160px', display: 'flex', flexDirection: 'row', margin: '5px', padding: '10px', zIndex: '1', position: 'absolute', justifyContent: 'flex-end', alignItems: 'flex-end', borderRadius: '15px', opacity: '0.4'}}>
-              
-            </div>
-          </div>
-
-
-          <div style={{height: '100px', width: '160px', display: 'flex', flexDirection: 'column', margin: '5px', padding: '10px', justifyContent: 'center', alignItems: 'center', backgroundImage: `url(${Flappy})`, backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', borderRadius: '15px', border: '1px solid grey'}}>
-            <Link to="/flappy" className='start-btn' style={{textDecoration: 'none', zIndex: '3'}}>
-              FLAPPY BIRD
-            </Link>
-            <div style={{height: '100px', width: '160px', display: 'flex', flexDirection: 'row', margin: '5px', padding: '10px', zIndex: '1', position: 'absolute', justifyContent: 'flex-end', alignItems: 'flex-end', borderRadius: '15px', opacity: '0.4'}}>
-              
-            </div>
-          </div>
-
-
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
+        <div style={{ ...buttonStyle, backgroundImage: `url(${Whackamole})` }}>
+          <Link to="/whackamole" className='start-btn' style={{ textDecoration: 'none', zIndex: '3' }}>
+            WHACK-A-MOLE
+          </Link>
         </div>
+
+        <div style={{ ...buttonStyle, backgroundImage: `url(${Hangman})` }}>
+          <Link to="/hangman" className='start-btn' style={{ textDecoration: 'none', zIndex: '3' }}>
+            HANGMAN
+          </Link>
+        </div>
+
+        <div style={{ ...buttonStyle, backgroundImage: `url(${MemoryGame})` }}>
+          <Link to="/memorygame" className='start-btn' style={{ textDecoration: 'none', zIndex: '3' }}>
+            MEMORY GAME
+          </Link>
+        </div>
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
+        <div style={{ ...buttonStyle, backgroundImage: `url(${Puzzle})` }}>
+          <Link to="/puzzle" className='start-btn' style={{ textDecoration: 'none', zIndex: '3' }}>
+            PUZZLE GAME
+          </Link>
+        </div>
+
+        <div style={{ ...buttonStyle, backgroundImage: `url(${Flappy})` }}>
+          <Link to="/flappy" className='start-btn' style={{ textDecoration: 'none', zIndex: '3' }}>
+            FLAPPY BIRD
+          </Link>
+        </div>
+      </div>
+
     </div>
   );
 };
