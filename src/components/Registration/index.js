@@ -5,7 +5,7 @@ import GUGULogo from '../1_Assets/MainAssets/HomeLogo.png';
 import InputBox from '../1_Assets/MainAssets/InputBox.png';
 import ButtonBox from '../1_Assets/MainAssets/ButtonBox.png';
 
-const Registration = () =>{
+const Registration = () =>{ 
     const history = useNavigate();
     // eslint-disable-next-line
     const [select, setSelect] = useState('')

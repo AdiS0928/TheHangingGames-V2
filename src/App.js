@@ -9,8 +9,10 @@ import Dashboard from './components/Dashboard';
 import WhackAMole from './components/Games/WhackAMole'; 
 import Hangman from './components/Games/Hangman'; 
 import MemoryGame from './components/Games/MemoryGame'; 
-import FlappyBird from './components/Games/FlappyBird/index.js';
-import Puzzle from './components/Games/Puzzle/index.js';
+import FlappyBird from './components/Games/FlappyBird';
+import Puzzle from './components/Games/Puzzle';
+
+import GameOver from './components/GameOver';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
             <Route exact path="/MemoryGame" element={<MemoryGame />} />
             <Route exact path="/Flappy" element={<FlappyBird />} />
             <Route exact path="/Puzzle" element={<Puzzle />} />
+            
+            <Route exact path="/GameOver" element={<GameOver />} />
           </Routes>
       </Router>
     </>
