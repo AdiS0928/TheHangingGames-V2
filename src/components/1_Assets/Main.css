@@ -18,7 +18,6 @@ body{
 }
 
 
-
 /* SCROLLBAR STYLE  */
 /* width */
 ::-webkit-scrollbar {
@@ -48,3 +47,13 @@ body{
 
 
 
+
+/* PLACEHOLDER COLOR  */
+::placeholder {
+  color: #efefef;
+  opacity: 1; /* Firefox */
+}
+
+::-ms-input-placeholder { /* Edge 12 -18 */
+  color: red;
+}
