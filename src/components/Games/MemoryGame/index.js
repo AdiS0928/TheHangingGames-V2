@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import './Memory.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -32,7 +32,7 @@ class PlayGround extends React.Component {
       randomizedFrameworks: [],
       finalizedFrameworks: [],
       openedFrameworks: [],
-      timeRemaining: 10,
+      timeRemaining: 100,
     };
     this.start();
   }
@@ -91,7 +91,9 @@ class PlayGround extends React.Component {
 
   start() {
     let finalizedFrameworks = [];
+    // eslint-disable-next-line
     this.state.duplicatedFrameworks = this.state.frameworks.concat(this.state.frameworks);
+    // eslint-disable-next-line
     this.state.randomizedFrameworks = this.shuffle(this.state.duplicatedFrameworks);
     this.state.randomizedFrameworks.forEach((name, index) => {
       finalizedFrameworks.push({
@@ -101,6 +103,7 @@ class PlayGround extends React.Component {
         fail: false,
       });
     });
+    // eslint-disable-next-line
     this.state.finalizedFrameworks = finalizedFrameworks;
     this.startTimer();
   }
