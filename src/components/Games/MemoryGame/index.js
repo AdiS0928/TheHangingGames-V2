@@ -149,7 +149,7 @@ class PlayGround extends React.Component {
     return (
       <div>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <h1 style={{ marginBottom: '-20px', marginTop: '20px' }}>TIME REMAINING: <span>{this.state.timeRemaining}</span></h1>
+          <h1 style={{ marginBottom: '20px', marginTop: '50px' }}>TIME REMAINING: <span>{this.state.timeRemaining}</span></h1>
         </div>
         <div className="playground">
           {this.state.finalizedFrameworks.map((framework, index) => (
