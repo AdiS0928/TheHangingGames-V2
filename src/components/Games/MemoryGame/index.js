@@ -3,13 +3,14 @@ import './Memory.scss'
 import React from 'react'
 import ReactDOM from 'react-dom'; // Add this line
 
+
 export default function MemoryGame(){
     useEffect(()=>{
         class PlayGround extends React.Component {
             constructor(props) {
                 super(props)
                 this.state = {
-                  frameworks: ['angular2','vue','react','grunt','phantomjs','ember','babel','ionic','gulp','meteor','yeoman','yarn','nodejs','bower','browserify'],
+                  frameworks: ['Cards','Cassette','ChipsOman','FlappyBird','KNDoor','LabanUp','Lollipop','Ludo','Mario','Safari','SourPunk','Courage','Dexter','Tom&Jerry','Sonic'],
                   duplicatedFrameworks: [],
                   randomizedFrameworks: [],
                   finalizedFrameworks: [],
@@ -133,7 +134,11 @@ export default function MemoryGame(){
                   </div>
                   <div className="back">
                   {/* eslint-disable-next-line */}
-                    <img src={"https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/" + this.props.framework + ".png"}/>
+                    {/* <img src={"https://raw.githubusercontent.com/samiheikki/javascript-guessing-game/master/static/logos/" + this.props.framework + ".png"}/> */}
+
+                    
+                    <img src={"../../1_Assets/GameAssets/MemoryGame/" + this.props.framework + ".png"}/>
+                    {/* ./components/1_Assets/GameAssets/MemoryGame  */}
                   </div>
                 </div>
               )
