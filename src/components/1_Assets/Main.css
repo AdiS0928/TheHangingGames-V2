@@ -1,0 +1,50 @@
+body{
+  background-color: #0099FF;
+  /* background-image: url('./MainAssets/Wallpaper.jpg'); */
+  color: white;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+
+/* FONTING  */
+@font-face{
+  font-family: myFont;
+  src:url(PetitCochon.otf);
+  
+}
+*{
+  font-family: myFont;
+}
+
+
+
+/* SCROLLBAR STYLE  */
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+  border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #00F526;
+  transform: 3s;
+  transition: 3s;
+  border-radius: 10px;
+}
+
+
+

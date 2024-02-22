@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "compass-mixins": "^0.12.12",
     "css-loader": "^6.8.1",
+    "firebase": "^10.8.0",
     "install": "^0.13.0",
     "jquery": "^3.7.1",
     "npm": "^10.2.5",
