@@ -21,7 +21,7 @@ const Sidebar = () => {
     </div>
 
     <Link to="/" style={{textDecoration: 'none', zIndex: '3'}}>
-      <button style={{display: 'flex', width: '300px', height: '50px', background: 'black', position: 'absolute', top: '0', left: '0', zIndex: '3', border: 'none', opacity: '0', cursor: 'grab'}}></button>
+      <button style={{color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '30px', width: '300px', height: '50px', background: 'black', position: 'absolute', top: '0', left: '0', zIndex: '3', border: 'none', opacity: '1', cursor: 'grab'}}>HIDE ME</button>
     </Link>
 </>
   );
