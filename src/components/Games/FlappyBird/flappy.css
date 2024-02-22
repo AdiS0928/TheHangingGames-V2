@@ -1,16 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
 
 body {
-  margin: 0;
-  text-align: center;
-  user-select: none;
+  /* background-color: #f2f2f2; */
 }
-header {
-  margin: 0 auto;
-  width: 431px;
+
+.container {
+  font-family: "Silkscreen", cursive;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
 }
-.score-container {
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.5rem;
+}
+
+.footer_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 370px;
+  color: #fff;
+}
+
+.footer_container p {
+  font-size: 0.6em;
+}
+
+.footer_container p {
+  color: greenyellow;
+}
+
+footer .mode_container {
   display: flex;
   justify-content: space-between;
-  padding: 8px 6px;
-  background: #000000;
+  align-items: center;
+  width: 80px;
+  margin-right: 0.5em;
+}
+
+footer .mode_container > span {
+  color: red;
+  font-size: 0.65em;
+  margin-top: 0.4em;
+}
+
+footer .btn_container > button {
+  position: relative;
+  width: 30px;
+  height: 11px;
+  border: 2px solid #f2f2f2;
+  border-radius: 10px;
+  margin: 0.5em 0;
+}
+
+footer .btn_container > button > .circle {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+
+footer .btn_container > button .active {
+  transition: all 200ms ease-in;
+  left: 0;
 }

@@ -1498,8 +1498,25 @@ export default function Puzzle(){
     //---------------------------------------------------------------------------- -
     
     window.addEventListener("load", function(){
+
+            // Array containing the image links
+      const imageLinks = [
+        'https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg',
+        'https://assets.codepen.io/2574552/Mona_Lisa.jpg'
+      ];
+
+      // Function to get a random image link
+      function getRandomImageLink() {
+        const randomIndex = Math.floor(Math.random() * imageLinks.length);
+        return imageLinks[randomIndex];
+      }
+
+      // Example usage
+      let img  = getRandomImageLink();
+
+      https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg
     
-    let img = 'https://assets.codepen.io/2574552/Mona_Lisa.jpg';
+    // let img = 'https://assets.codepen.io/2574552/Mona_Lisa.jpg';
     
     autoStart = isMiniature(); // used for nice miniature in CodePen
     
