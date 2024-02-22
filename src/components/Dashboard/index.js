@@ -33,7 +33,7 @@ const Dashboard = () => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100vh', width: '100vw' }}>
 
-      <img style={{ width: '250px' }} alt='GUGULogo' src={Logo} />
+      <img style={{ width: '200px' }} className='GUGUMainLogo' alt='GUGULogo' src={Logo} />
 
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
         <div style={{ ...buttonStyle, backgroundImage: `url(${Whackamole})` }}>

@@ -21,7 +21,7 @@ const Sidebar = () => {
     </div>
 
     <Link to="/" style={{textDecoration: 'none', zIndex: '3'}}>
-      <button style={{display: 'flex', width: '300px', height: '50px', background: 'black', position: 'absolute', top: '0', left: '0', zIndex: '3', border: 'none', opacity: '0.3'}}></button>
+      <button style={{display: 'flex', width: '300px', height: '50px', background: 'black', position: 'absolute', top: '0', left: '0', zIndex: '3', border: 'none', opacity: '0', cursor: 'grab'}}></button>
     </Link>
 </>
   );

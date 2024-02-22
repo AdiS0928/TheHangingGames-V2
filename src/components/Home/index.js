@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100vh', width: '100vw'}}>
       
-      <img style={{width: '40vw'}} alt='GUGULogo' src={Logo}/>
+      <img className='GUGUMainLogo' style={{width: '40vw'}} alt='GUGULogo' src={Logo} />
 
       <Link to="/Registration" style={{textDecoration: 'none'}}>
         <button  style={{backgroundColor: 'transparent', border: 'none', height: '90px', width: '370px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${ButtonBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '10px', cursor: 'grab', fontSize: '30px', color: 'white'}} >Let's Go</button>

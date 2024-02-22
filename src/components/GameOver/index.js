@@ -9,7 +9,7 @@ const GameOver = () => {
   return (
     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100vh', width: '100vw'}}>
       
-      <img style={{width: '20vw'}} alt='GUGULogo' src={Logo}/>
+      <img style={{width: '20vw'}} className='GUGUMainLogo' alt='GUGULogo' src={Logo}/>
       <h1 style={{fontSize: '6vw', fontWeight: '300', marginTop: '50px'}}>GAME OVER</h1>
 
       <h1 style={{fontSize: '2.5vw', marginTop: '0', fontWeight: '300'}}>lnsert coin to continue</h1>

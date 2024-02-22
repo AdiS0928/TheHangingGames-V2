@@ -178,7 +178,7 @@ const HangmanGame = () => {
 
 		if (Hintof === 'YA FILTHY ANIMAL') {
 			console.log("YA FILTHY ANIMAL");
-			document.getElementById("Hintof").innerHTML = "COMPLETE THIS DIALOGUE FROM HOME ALONE<br></br> 'KEEP THE CHANGE, ___________!'"
+			document.getElementById("Hintof").innerHTML = "COMPLETE THIS DIALOGUE FROM HOME ALONE <br></br> 'KEEP THE CHANGE, ___________!'"
 		}
 
 		if (Hintof === 'SMELLY CAT') {
@@ -224,7 +224,7 @@ const HangmanGame = () => {
 	// eslint-disable-next-line 
   }, []); // Run only once when the component mounts
   return (
-    <div className='mainhangman'>
+    <div className='mainhangman' style={{marginTop: '-40px'}}>
       <div class="hangman">
         <div class="hangman-results">
           <div class="hangman-hangman">

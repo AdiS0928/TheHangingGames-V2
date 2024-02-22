@@ -137,7 +137,7 @@ class PlayGround extends React.Component {
   componentDidUpdate() {
     if (this.state.timeRemaining === 0) {
       this.stopTimer();
-      this.props.navigate('/');
+      this.props.navigate('/GameOver');
     }
   }
 

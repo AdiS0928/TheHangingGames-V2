@@ -64,7 +64,7 @@ const Registration = () =>{
                 <div style={{display: 'flex', flexDirection: 'column', gap:'5px', alignItems: 'center', justifyContent:'center', height: '100vh'}}>
 
                     <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginBottom: '-10px'}}>
-                        <img style={{width: '200px'}} src={GUGULogo} alt="Nissan Logo"/>
+                        <img style={{width: '200px'}} className='GUGUMainLogo' src={GUGULogo} alt="Nissan Logo"/>
                     </div>
 
                     <div style={{width: '80vw', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', marginTop: '10px'}}>
