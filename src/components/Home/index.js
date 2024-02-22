@@ -11,7 +11,7 @@ const Home = () => {
       
       <img style={{width: '40vw'}} alt='GUGULogo' src={Logo}/>
 
-      <Link to="/Registration" className='start-btn' style={{textDecoration: 'none'}}>
+      <Link to="/Registration" style={{textDecoration: 'none'}}>
         <button  style={{backgroundColor: 'transparent', border: 'none', height: '90px', width: '370px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${ButtonBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '10px', cursor: 'grab', fontSize: '30px', color: 'white'}} >Let's Go</button>
       </Link>
 
