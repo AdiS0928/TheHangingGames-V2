@@ -4,7 +4,6 @@ import { Navigate } from 'react-router-dom';
 
 export default function FlappyBird(){
 
-  var navigate = Navigate()
 
 
 
@@ -24,12 +23,13 @@ const modeTitle = document.querySelector(".mode_container span ");
 const originalWidth = 370;
 const originalHeight = 560;
 
-// Calculate canvas width based on aspect ratio
-const canvasWidth = window.innerHeight * (originalWidth / originalHeight);
+// Calculate canvas height based on 80vh and aspect ratio
+const canvasHeight = window.innerHeight * 0.9;
+const canvasWidth = (originalWidth / originalHeight) * canvasHeight;
 
 // Set canvas dimensions
 canvas.width = canvasWidth;
-canvas.height = window.innerHeight;
+canvas.height = canvasHeight;
 
 const sprite = new Image();
 sprite.src = "https://raw.githubusercontent.com/islamelsayyad/flappybird-canvas/05d4cdc9cbb4bf209fc9568a1a4f48a820c1930f/assets/img/flappybird-sprites.png";
@@ -219,7 +219,7 @@ const pipes = {
   maxPos: -230,
   minPos: -100,
 
-  gap: 95,
+  gap: 105,
 
   frames: 0,
   period: 50,
@@ -293,6 +293,16 @@ const pipes = {
         }
       }
     }
+
+    for (let i = 0; i < this.position.length; i++) {
+      let position = this.position[i];
+      if (position.x + this.width < bird.x && !position.passed) {
+        position.passed = true;
+        score.current++;
+        POINT.play();
+      }
+    }
+  
     if (state.current !== state.game) return false;
 
     if (!(state.current === state.gameOver) && pauseBtn.isPause === false) {
@@ -384,9 +394,9 @@ const bird = {
   frame: 0,
 
   speed: 0,
-  gravity: 0.1,
+  gravity: 0,
 
-  jump: 6.9,
+  jump: 5.9,
 
   draw() {
     ctx.drawImage(
@@ -416,7 +426,7 @@ const bird = {
             this.y = this.y;
         } else {
             // Adjust the bird's falling speed (gravity) here
-            this.speed += this.gravity*8; // Increase the falling speed
+            this.speed += this.gravity*5; // Increase the falling speed
             this.y += this.speed;
 
             if (this.y + this.height >= floor.y) {
@@ -570,21 +580,25 @@ const gameOver = {
 
   draw() {
     for (let i = 0; i < this.gameOverMsg.length; i++) {
+      const message = this.gameOverMsg[i];
+      const x = (canvas.width - message.width) / 2;
+      const y = message.y; // Keep the y coordinate unchanged
       if (state.current === state.gameOver) {
         ctx.drawImage(
           sprite,
-          this.gameOverMsg[i].sX,
-          this.gameOverMsg[i].sY,
-          this.gameOverMsg[i].sWidth,
-          this.gameOverMsg[i].sHeight,
-          this.gameOverMsg[i].x,
-          this.gameOverMsg[i].y,
-          this.gameOverMsg[i].width,
-          this.gameOverMsg[i].height
+          message.sX,
+          message.sY,
+          message.sWidth,
+          message.sHeight,
+          x,
+          y,
+          message.width,
+          message.height
         );
       }
     }
   },
+  
 
   update() {}
 };
@@ -640,7 +654,7 @@ const score = {
     let gameOverMsg = gameOver.gameOverMsg[1];
     ctx.fillStyle = "#fafafa";
     ctx.strokeStyle = "#553847";
-
+  
     if (state.current === state.game) {
       ctx.font = "42px Flappy Bird";
       ctx.lineWidth = 2;
@@ -651,37 +665,46 @@ const score = {
     if (state.current === state.gameOver) {
       ctx.font = "25px Flappy Bird";
       ctx.lineWidth = 1;
-
-      ctx.textAlign = "right"; // Align the high score and current score to the right
+      
+      const centerX = canvas.width / 2; // Calculate the center of the canvas
+      const scoreX = centerX + 95; // Adjusted by adding 15 pixels
+      
       ctx.fillText(
         this.high,
-        gameOverMsg.x + gameOverMsg.width - 20,
+        scoreX,
         gameOverMsg.y + gameOverMsg.height - 34
       );
       ctx.strokeText(
         this.high,
-        gameOverMsg.x + gameOverMsg.width - 20,
+        scoreX,
         gameOverMsg.y + gameOverMsg.height - 34
       );
-
+  
       ctx.fillText(
         this.current,
-        gameOverMsg.x + gameOverMsg.width - 20,
+        scoreX,
         gameOverMsg.y + 54
       );
       ctx.strokeText(
         this.current,
-        gameOverMsg.x + gameOverMsg.width - 20,
+        scoreX,
         gameOverMsg.y + 54
       );
     }
   },
+  
 
   update() {
+    // if (pipes.position.length > this.current) {
+    //   this.current = pipes.position.length;
+    // }
+    
     if (this.current > this.high) {
-      this.high = this.current;
+      this.high = this.current; // Update the high score if the current score surpasses it
     }
   },
+
+
 
   reset() {
     this.current = 0;
