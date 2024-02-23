@@ -52,8 +52,7 @@ const Registration = () =>{
                 history("/Dashboard", {state:{id:doc.id}})
                 
             })
-            console.log(name,email,number,select)
-           ;
+            console.log(name,email,number,select);
         }
     }
 

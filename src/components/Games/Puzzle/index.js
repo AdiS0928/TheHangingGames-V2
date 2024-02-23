@@ -1,11 +1,28 @@
 import { useEffect } from 'react'
 import './puzzle.css'
 import imageP from '../../1_Assets/GameAssets/Puzzle/Puzzle.jpg'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Puzzle(){
-    useEffect(()=>{
-      "use strict";
+  const [remainingTime, setRemainingTime] = useState(120); 
+  const navigate = useNavigate();
 
+
+    useEffect(()=>{
+      
+      "use strict";
+      const startCountdown = () => {
+        const countdownInterval = setInterval(() => {
+          setRemainingTime((prevTime) => prevTime - 1);
+          if (remainingTime === 0) {
+            clearInterval(countdownInterval);
+          }
+        }, 1000);
+
+      };
+
+      
       let autoStart;
       const mrandom = Math.random,
             mfloor = Math.floor,
@@ -79,7 +96,16 @@ export default function Puzzle(){
       dt.classList.add('title');
       dt.appendChild(document.createTextNode(params.title));
       let that = this;
-      dt.addEventListener("click",()=>params.lines[0].func());
+      dt.addEventListener("click",()=>{
+        params.lines[0].func()
+        setTimeout(()=>{
+          startCountdown();
+          setTimeout(()=>{
+            navigate('/GameOver')
+          },remainingTime*1000)
+        },3000)
+        document.getElementById('divmenu').style.display = 'none'
+      });
       divMenu.appendChild(dt);
       this.list = [];  
       for (let k = 0; k < params.lines.length; ++k){
@@ -1108,6 +1134,8 @@ export default function Puzzle(){
     
     // mouseUp during game
     Puzzle.prototype.mouseUpGame = function(event) {
+      // console.log(this.polyPieces.length)
+
     
       let k, polyP, pc;
     
@@ -1161,6 +1189,12 @@ export default function Puzzle(){
     
     // won ?
       if (this.polyPieces.length > 1) return; // no, continue
+
+      setTimeout(()=>{
+        navigate('/YouWin')
+      },4000)
+
+
     
     // YES ! tell the player
       this.removeAllListeners();
@@ -1507,6 +1541,10 @@ export default function Puzzle(){
         <div style={{width:'100vw',height:'100vh',justifyContent:'center',alignItems:'center'}}>
             <div  id="forPuzzle">
 
+            </div>
+
+            <div style={{position:'absolute',bottom:'0',left:'0'}}>
+              <h1 className="score" style={{fontWeight: '300'}}>TIME REMAINING: <span className="TRemain">{remainingTime}</span></h1>
             </div>
         </div>
 
