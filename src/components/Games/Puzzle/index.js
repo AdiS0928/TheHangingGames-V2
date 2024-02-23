@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import './puzzle.css'
+import imageP from '../../1_Assets/GameAssets/Puzzle/Puzzle.jpg'
 
 export default function Puzzle(){
     useEffect(()=>{
@@ -1490,7 +1491,7 @@ export default function Puzzle(){
     
     });
 
-    let img = 'https://assets.codepen.io/2574552/Mona_Lisa.jpg';
+    let img = imageP;
     
     autoStart = isMiniature(); // used for nice miniature in CodePen
     
