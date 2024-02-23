@@ -82,7 +82,7 @@ const HangmanGame = () => {
       puzzle = newPuzzle();
       puzzleLetterContainers = [];
       previouslyChosen = '';
-      totalIncorrect = 0;
+      totalIncorrect = 0; 
       remainingBlanks = puzzle.length;
       $('.hangman-puzzle').html('');
       $('#added-parts').html('');
@@ -240,7 +240,7 @@ const HangmanGame = () => {
             <button style={{marginTop: '15px'}} id="game-over-replay">START OVER</button>
           </div>
         </div>
-		<p className='Hintof' id='Hintof' style={{fontSize: '25px'}}>I am the Hint</p>
+		<p className='Hintof' id='Hintof' style={{fontSize: '25px', marginBottom: '20px'}}>I am the Hint</p>
         <div class="hangman-puzzle">
         </div>
         <div class="hangman-letters">
