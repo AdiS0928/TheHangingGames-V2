@@ -1486,6 +1486,10 @@ export default function Puzzle(){
     
     window.addEventListener("load", function(){
     
+   
+    
+    });
+
     let img = 'https://assets.codepen.io/2574552/Mona_Lisa.jpg';
     
     autoStart = isMiniature(); // used for nice miniature in CodePen
@@ -1494,8 +1498,6 @@ export default function Puzzle(){
                           width: window.innerWidth,
                           height: window.innerHeight,
                           idiv: "forPuzzle" });
-    
-    });
      
 },[])
 
