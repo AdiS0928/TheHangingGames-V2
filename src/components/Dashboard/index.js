@@ -8,7 +8,6 @@ import Hangman from '../1_Assets/Thumbnails/Hangman.jpg';
 import MemoryGame from '../1_Assets/Thumbnails/MemoryGame.jpg';
 import Puzzle from '../1_Assets/Thumbnails/Puzzle.jpg';
 import Flappy from '../1_Assets/Thumbnails/Flappy.jpg';
-import { Navigate } from 'react-router-dom';
 // import TicTacToe from  '../1_Assets/Thumbnails/TicTacToe.png';
 
 const buttonStyle = {
@@ -31,16 +30,7 @@ const buttonStyle = {
   
 };
 
-
-
 const Dashboard = () => {
-
-  // const navigate = Navigate();
-
-  // function nav(){
-  //   navigate('/puzzle')
-  //   navigate(0)
-  // }
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100vh', width: '100vw' }}>
 

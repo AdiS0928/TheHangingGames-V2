@@ -17,7 +17,7 @@ const Sidebar = () => {
       clearTimeout(inactivityTimeout);
       inactivityTimeout = setTimeout(() => {
         navigate("/");
-      }, 20000);
+      }, 180000);
     }
 
     function handleUserActivity() {
@@ -27,6 +27,7 @@ const Sidebar = () => {
     document.addEventListener('click', handleUserActivity);
     document.addEventListener('mousemove', handleUserActivity);
     document.addEventListener('keydown', handleUserActivity);
+    
 
     resetInactivityTimer();
 

@@ -1,7 +1,12 @@
 import { useEffect } from 'react'
 import './flappy.css'
+import { Navigate } from 'react-router-dom';
 
 export default function FlappyBird(){
+
+  var navigate = Navigate()
+
+
 
    
     useEffect(()=>{

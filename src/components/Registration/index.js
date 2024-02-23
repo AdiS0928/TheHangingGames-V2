@@ -4,11 +4,14 @@ import firebase from '../Firebase';
 import GUGULogo from '../1_Assets/MainAssets/HomeLogo.png';
 import InputBox from '../1_Assets/MainAssets/InputBox.png';
 import ButtonBox from '../1_Assets/MainAssets/ButtonBox.png';
-
+import { useEffect } from "react";
 const Registration = () =>{ 
     const history = useNavigate();
     // eslint-disable-next-line
     const [select, setSelect] = useState('')
+
+
+    
 
     function handleSubmit(){
 

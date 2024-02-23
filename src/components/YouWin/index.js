@@ -3,8 +3,14 @@ import '../1_Assets/Main.css';
 import { Link } from 'react-router-dom';
 import Logo from '../1_Assets/MainAssets/HomeLogo.png';
 import ButtonBox from '../1_Assets/MainAssets/ButtonBox.png';
+import { Navigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const YouWin = () => { 
+
+
+
+
 
   return (
     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100vh', width: '100vw'}}>

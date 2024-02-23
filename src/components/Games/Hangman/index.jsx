@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './styles.scss';
 import $ from 'jquery';
+import { Navigate } from 'react-router-dom';
 
 const HangmanGame = () => {
+
+  var navigate = Navigate()
+
+
+
 	// eslint-disable-next-line 
   const [puzzleList, setPuzzleList] = useState([
 	"POWERPUFF GIRLS",

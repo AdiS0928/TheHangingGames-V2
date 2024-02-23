@@ -423,6 +423,7 @@ export default function Puzzle(){
       this.theDiv.style.position = "absolute";
     
       this.theCanv = document.createElement('canvas');
+      this.theCanv.id = 'puzz'
       this.theCanv.width = 3 * puzzle.dx;
       this.theCanv.height = 3 * puzzle.dy;
     

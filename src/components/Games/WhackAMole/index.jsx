@@ -12,6 +12,8 @@ const WhackAMoleGame = () => {
   const [buttonDisabled, setButtonDisabled] = useState(false);
   const navigate = useNavigate();
 
+
+
   useEffect(() => {
     const holes = document.querySelectorAll('.hole');
     setHoles(holes);
