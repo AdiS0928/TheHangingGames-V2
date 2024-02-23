@@ -68,7 +68,7 @@ class PlayGround extends React.Component {
     let finalizedFrameworks = this.state.finalizedFrameworks;
 
     if (finalizedFrameworks.every((card) => card.complete)) {
-      this.props.navigate('/GameOver');
+      this.props.navigate('/Dashboard');
       // alert('Congratulations! You have won!');
     } else {
       if (
@@ -143,7 +143,7 @@ class PlayGround extends React.Component {
       const checkWinnerInterval = setInterval(() => {
         if (this.state.finalizedFrameworks.every((card) => card.complete)) {
           clearInterval(checkWinnerInterval); // Stop the interval once the player wins
-          this.props.navigate('/GameOver');
+          this.props.navigate('/Dashboard');
           // alert('Congratulations! You have won!');
         }
       }, 500);
