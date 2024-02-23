@@ -32,7 +32,7 @@ class PlayGround extends React.Component {
       randomizedFrameworks: [],
       finalizedFrameworks: [],
       openedFrameworks: [],
-      timeRemaining: 100,
+      timeRemaining: 200,
     };
     this.start();
   }
