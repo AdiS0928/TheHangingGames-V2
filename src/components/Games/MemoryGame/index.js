@@ -68,10 +68,8 @@ class PlayGround extends React.Component {
     let finalizedFrameworks = this.state.finalizedFrameworks;
 
     if (finalizedFrameworks.every((card) => card.complete)) {
-      setTimeout(() => {
-        this.props.navigate('/Dashboard');
-        alert('Congratulations! You have won!');
-      }, 500);
+      this.props.navigate('/GameOver');
+      alert('Congratulations! You have won!');
     } else {
       if (
         this.state.openedFrameworks[0].name === this.state.openedFrameworks[1].name &&
@@ -93,9 +91,7 @@ class PlayGround extends React.Component {
 
   start() {
     let finalizedFrameworks = [];
-    // eslint-disable-next-line
     this.state.duplicatedFrameworks = this.state.frameworks.concat(this.state.frameworks);
-    // eslint-disable-next-line
     this.state.randomizedFrameworks = this.shuffle(this.state.duplicatedFrameworks);
     this.state.randomizedFrameworks.forEach((name, index) => {
       finalizedFrameworks.push({
@@ -105,7 +101,6 @@ class PlayGround extends React.Component {
         fail: false,
       });
     });
-    // eslint-disable-next-line
     this.state.finalizedFrameworks = finalizedFrameworks;
     this.startTimer();
   }
@@ -140,14 +135,15 @@ class PlayGround extends React.Component {
     if (this.state.timeRemaining === 0) {
       this.stopTimer();
       this.props.navigate('/GameOver');
-    }
-
-    // Check for all cards with opacity .2
-    const allCards = document.querySelectorAll('.card');
-    const allCardsMatched = Array.from(allCards).every(card => card.style.opacity === '0.3');
-    
-    if (allCardsMatched) {
-      this.props.navigate('/Dashboard');
+    } else {
+      // Check for winning condition continuously
+      const checkWinnerInterval = setInterval(() => {
+        if (this.state.finalizedFrameworks.every((card) => card.complete)) {
+          clearInterval(checkWinnerInterval); // Stop the interval once the player wins
+          this.props.navigate('/GameOver');
+          alert('Congratulations! You have won!');
+        }
+      }, 500);
     }
   }
 
