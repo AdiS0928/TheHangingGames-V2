@@ -23,6 +23,7 @@ const PlayGroundWrapper = () => {
 
   return <div id="app"></div>;
 };
+
 class PlayGround extends React.Component {
   constructor(props) {
     super(props);
@@ -139,7 +140,15 @@ class PlayGround extends React.Component {
     if (this.state.timeRemaining === 0) {
       this.stopTimer();
       this.props.navigate('/GameOver');
-    } 
+    }
+
+    // Check for all cards with opacity .2
+    const allCards = document.querySelectorAll('.card');
+    const allCardsMatched = Array.from(allCards).every(card => card.style.opacity === '0.2');
+    
+    if (allCardsMatched) {
+      this.props.navigate('/Dashboard');
+    }
   }
 
   componentWillUnmount() {
