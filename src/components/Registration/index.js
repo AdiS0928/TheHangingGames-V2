@@ -83,8 +83,6 @@ const Registration = () =>{
 
                     </div>
 
-                    
-
                     <div style={{width: '300px', height: '30px', padding: '0', margin: '0',  display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                         <p id="error" style={{color: '#fc0f64', padding: '0', margin: '0', fontSize: '15px'}}></p>
                     </div>

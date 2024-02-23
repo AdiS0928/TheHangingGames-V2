@@ -68,6 +68,7 @@ class PlayGround extends React.Component {
 
     if (finalizedFrameworks.every((card) => card.complete)) {
       setTimeout(() => {
+        this.props.navigate('/Dashboard');
         alert('Congratulations! You have won!');
       }, 500);
     } else {
@@ -138,7 +139,7 @@ class PlayGround extends React.Component {
     if (this.state.timeRemaining === 0) {
       this.stopTimer();
       this.props.navigate('/GameOver');
-    }
+    } 
   }
 
   componentWillUnmount() {
