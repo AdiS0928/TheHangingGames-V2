@@ -35,12 +35,12 @@ const buttonStyle = {
 
 const Dashboard = () => {
 
-  let navigate = Navigate()
+  // const navigate = Navigate();
 
-  function nav(){
-    navigate('/puzzle')
-    navigate(0)
-  }
+  // function nav(){
+  //   navigate('/puzzle')
+  //   navigate(0)
+  // }
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', height: '100vh', width: '100vw' }}>
 
