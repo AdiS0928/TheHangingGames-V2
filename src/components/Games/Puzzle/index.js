@@ -9,10 +9,8 @@ export default function Puzzle(){
   const navigate = useNavigate();
 
 
-    useEffect(()=>{
-
-      
-      
+    useEffect(()=>{    
+      // eslint-disable-next-line  
       "use strict";
       var time = 120
       const startCountdown = () => {
@@ -104,6 +102,7 @@ export default function Puzzle(){
       let dt = document.createElement('div');
       dt.classList.add('title');
       dt.appendChild(document.createTextNode(params.title));
+      // eslint-disable-next-line
       let that = this;
       dt.addEventListener("click",()=>{
         params.lines[0].func()
@@ -196,7 +195,7 @@ export default function Puzzle(){
       elFile.addEventListener("change", getFile);
     
       function getFile() {
-    
+        // eslint-disable-next-line
         if (this.files.length == 0) {
           returnLoadFile ({fail: 'no file'});
           return;
@@ -214,7 +213,7 @@ export default function Puzzle(){
         reader.addEventListener('error', () => {
           returnLoadFile ({fail: 'error'});
         });
-    
+        // eslint-disable-next-line
         if (options.image || options.readMethod == 'readAsDataURL')
           reader.readAsDataURL(this.files[0]);
         else
@@ -345,13 +344,14 @@ export default function Puzzle(){
     */
     
     Side.prototype.drawPath = function(ctx, shiftx, shifty, backwards, withoutMoveTo) {
-    
+      // eslint-disable-next-line
       let k, mix, miy;
     
       if (backwards) {
         if (!withoutMoveTo) {
           ctx.moveTo(this.points[this.points.length - 1].x - shiftx, this.points[this.points.length - 1].y - shifty);
         }
+        // eslint-disable-next-line
         if(this.type == "d") {
           ctx.lineTo(this.points[0].x - shiftx, this.points[0].y - shifty);
         } else { // jigsaw side
@@ -365,6 +365,7 @@ export default function Puzzle(){
         if (!withoutMoveTo) {
           ctx.moveTo(this.points[0].x - shiftx, this.points[0].y - shifty);
         }
+        // eslint-disable-next-line
         if(this.type == "d") {
           ctx.lineTo(this.points[1].x - shiftx, this.points[1].y - shifty);
         } else { // edge zigzag
@@ -438,6 +439,7 @@ export default function Puzzle(){
     
     
       let sx, sy, sWidth, sHeight, dx, dy,dWidth, dHeight;
+      // eslint-disable-next-line
       if (this.kx == 0) {
         sx = 0 * puzzle.dx / scale + offsx; // won't work on safari if offsx < 0
         dWidth = 2 * puzzle.dx;
@@ -448,6 +450,7 @@ export default function Puzzle(){
         dx = 0;
       }
       sWidth = dWidth / scale;
+      // eslint-disable-next-line
       if (this.ky == 0) {
         sy = 0 * puzzle.dy / scale + offsy; // won't work on safari if offsy < 0
         dHeight = 2 * puzzle.dy;
@@ -601,15 +604,19 @@ export default function Puzzle(){
         for (let kn = 0; kn < otherPoly.pieces.length; ++kn) {
           p2 = otherPoly.pieces[kn];
     // p2 above p1 ?
+    // eslint-disable-next-line
           if ((p1.kx == p2.kx && p1.ky == p2.ky + 1) &&
               (this.puzzle.near(p1, p2, 0, - 1))) return true;
     // p2 below p1 ?
+    // eslint-disable-next-line
           if ((p1.kx == p2.kx && p1.ky == p2.ky - 1) &&
               (this.puzzle.near(p1, p2, 0, 1))) return true;
     // p2 left of p1 ?
+    // eslint-disable-next-line
           if ((p1.kx - 1 == p2.kx && p1.ky == p2.ky) &&
               (this.puzzle.near(p1, p2, - 1, 0))) return true;
     // p2 right of p1 ?
+    // eslint-disable-next-line
           if ((p1.kx + 1 == p2.kx && p1.ky == p2.ky) &&
               (this.puzzle.near(p1, p2, + 1, 0))) return true;
         } // for kn
@@ -778,7 +785,7 @@ export default function Puzzle(){
     // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -   -
     
     Puzzle.prototype.next = function() {
-    
+      // eslint-disable-next-line
       let nx, ny, np, dx, dy, kx, ky, x, y, p1, p2, p3, brd, s1, s2, s3, s4, s5, s6, s7, s8, s9, concav;
     /* parameters for the shape of pieces edges
     */
@@ -816,7 +823,7 @@ export default function Puzzle(){
         }
         this.freeSpace = 1; // place left under
       }
-    
+      // eslint-disable-next-line
       let height = this.height, width = this.width;
       this.dx = dx = this.width / nx; // horizontal side of tiling
       this.dy = dy = this.height / ny; // vertical side of tiling
@@ -850,9 +857,13 @@ export default function Puzzle(){
         corners[ky] = [];
         for (kx = 0; kx <= nx; ++kx) {
           corners[ky][kx] = new Point((kx + alea(-coeffDecentr, coeffDecentr)) * dx, (ky + alea(-coeffDecentr, coeffDecentr)) * dy);
+          // eslint-disable-next-line
           if (kx == 0) corners[ky][kx].x = 0;
+          // eslint-disable-next-line
           if (kx == nx) corners[ky][kx].x = this.width;
+          // eslint-disable-next-line
           if (ky == 0) corners[ky][kx].y = 0;
+          // eslint-disable-next-line
           if (ky == ny) corners[ky][kx].y = this.height;
         } // for kx
       } // for ky
@@ -864,6 +875,7 @@ export default function Puzzle(){
         for (kx = 0; kx < nx; ++kx) {
           this.pieces[ky][kx] = np = new Piece(kx, ky);
     // top side
+    // eslint-disable-next-line
           if (ky == 0) {
             np.ts.points = [corners[ky][kx],corners[ky][kx + 1]];
             np.ts.type = "d";
@@ -880,6 +892,7 @@ export default function Puzzle(){
               np.rs.twist(corners[ky][kx + 2],corners[ky + 1][kx + 2], 0.5, 1);
           }
     // left side
+    // eslint-disable-next-line
           if (kx == 0) {
             np.ls.points = [corners[ky][kx],corners[ky + 1][kx]];
             np.ls.type = "d";
@@ -906,6 +919,7 @@ export default function Puzzle(){
     
     Puzzle.prototype.associateImage = function() {
       let kx, ky, kn, kp;
+      // eslint-disable-next-line
       let div, scale, he, wi, offsx, offsy, pc;
     
       // scale picture
@@ -944,6 +958,7 @@ export default function Puzzle(){
           pc = this.polyPieces[kp].pieces[kn];
     
           this.divBoard.appendChild(pc.theDiv);
+          // eslint-disable-next-line
           switch(this.freeSpace){
             case 0 : pc.pTarget = new Point(this.reqWidth - (2.25 + Math.random() / 4) * this.dx, Math.random() * (this.height -  this.dy) - this.dy);break;
             case 1 : pc.pTarget = new Point(Math.random() * (this.width -  this.dx) - this.dx, this.reqHeight - (2.25 + Math.random() / 4) * this.dy);
@@ -981,7 +996,7 @@ export default function Puzzle(){
     
     Puzzle.prototype.animate = function() {
       let kp, kn, pc, act, cib;
-    
+      // eslint-disable-next-line
       if (this.anim.cpt == 0){
         window.clearInterval(this.anim.tmr);
         delete this.anim;
@@ -998,6 +1013,7 @@ export default function Puzzle(){
           act = pc.where();
           cib = pc.pTarget;
           pc.moveTo(new Point((this.anim.cpt * act.x + cib.x) / (this.anim.cpt + 1), (this.anim.cpt * act.y + cib.y) / (this.anim.cpt + 1)));
+          // eslint-disable-next-line
           if (this.anim.cpt == 0) { delete pc.pTarget ; }
         } // for kn
       } // for kp
@@ -1008,7 +1024,7 @@ export default function Puzzle(){
     
     Puzzle.prototype.animateEnd = function() {
       let xcou, ycou;
-    
+      // eslint-disable-next-line
       if (this.anim.cpt == 0){
         window.clearInterval(this.anim.tmr);
         delete this.anim;
@@ -1099,6 +1115,7 @@ export default function Puzzle(){
       this.addRemovableEventListener("touchstart", (function(puzzle){
                                                     return function(event) {
                                                         event.preventDefault();
+                                                        // eslint-disable-next-line
                                                         if (event.touches.length != 1) return;
                                                         let [x,y] = [event.touches[0].clientX,event.touches[0].clientY];
                                                         let newEvent = {x: x, y: y, buttons: null, origin: "touch"};
@@ -1116,6 +1133,7 @@ export default function Puzzle(){
       this.addRemovableEventListener("touchmove", (function(puzzle){
                                                     return function(event) {
                                                         event.preventDefault();
+                                                        // eslint-disable-next-line
                                                         if (event.touches.length != 1) return;
                                                         let [x,y] = [event.touches[0].clientX,event.touches[0].clientY];
                                                         let newEvent = {x: x, y: y, buttons: null, origin: "touch"};
@@ -1127,6 +1145,7 @@ export default function Puzzle(){
     // mouseDown during game
     Puzzle.prototype.mouseDownGame = function(event) {
     // ignore if not left button only
+    // eslint-disable-next-line
       if (event.origin == "mouse" && (event.buttons != 1)) return; 
       this.pieceMove = this.lookForPiece(event) ;
       if (this.pieceMove === false) return;
@@ -1250,7 +1269,9 @@ export default function Puzzle(){
       if (this.pieceMove === false) return;
     
     // for the case where button was released out of 'good' area
+    // eslint-disable-next-line
       if (event.origin == "mouse") {    
+        // eslint-disable-next-line
         if ((event.buttons & 1) == 0) { this.mouseUpGame(event); return; }
       }
       
@@ -1272,7 +1293,7 @@ export default function Puzzle(){
     // returned value : (index of PolyPiece + piece) or false (if not on a piece)
     
     Puzzle.prototype.lookForPiece = function(event) {
-    
+      // eslint-disable-next-line
       let kp, kn, z;
       let x =  event.x - this.mouseOffsX;
       let y =  event.y - this.mouseOffsY;
@@ -1305,11 +1326,15 @@ export default function Puzzle(){
       for (kbcl = 0;kbcl < loops.length; kbcl++) {
         for (kc = 0; kc < loops[kbcl].length; kc++) {
           edge = loops[kbcl][kc];
-    
+          // eslint-disable-next-line
           switch (edge.edge) {
+            // eslint-disable-next-line
             case 0 : ppc.pieces[edge.kp].ts.drawPath(ctx, 0, 0, false, (kc!= 0)); break;
+            // eslint-disable-next-line
             case 1 : ppc.pieces[edge.kp].rs.drawPath(ctx, 0, 0, false, (kc!= 0)); break;
+            // eslint-disable-next-line
             case 2 : ppc.pieces[edge.kp].bs.drawPath(ctx, 0, 0, true, (kc!= 0)); break;
+            // eslint-disable-next-line
             case 3 : ppc.pieces[edge.kp].ls.drawPath(ctx, 0, 0, true, (kc!= 0)); break;
           }
         } // for kc
@@ -1377,6 +1402,7 @@ export default function Puzzle(){
     Puzzle.prototype.computenxAndny = function() {
     
       let kx, ky, width = this.image.width, height = this.image.height, npieces = this.npieces;
+      // eslint-disable-next-line
       let err, err2, errmin = 1e9;
       let ncv, nch;
     
@@ -1429,6 +1455,7 @@ export default function Puzzle(){
     
       function edgeIsCommon (kx, ky, edge) {
         let k;
+        // eslint-disable-next-line
         switch(edge) {
           case 0 : ky--; break; // top edge
           case 1 : kx++; break; // right edge
@@ -1436,6 +1463,7 @@ export default function Puzzle(){
           case 3 : kx--; break; // left edge
         } // switch
         for (k = 0; k < tbCases.length;k++) {
+          // eslint-disable-next-line
           if (kx == tbCases[k].kx && ky == tbCases[k].ky) return true; // we found the neighbor
         }
         return false; // not a common edge
@@ -1448,6 +1476,7 @@ export default function Puzzle(){
       function edgeIsInTbEdges (kx, ky, edge) {
         let k;
         for (k = 0; k < tbEdges.length;k++) {
+          // eslint-disable-next-line
           if (kx == tbEdges[k].kx && ky == tbEdges[k].ky && edge == tbEdges[k].edge) return k; // found it
         }
         return false; // not found
@@ -1537,12 +1566,12 @@ export default function Puzzle(){
     let img = imageP;
     
     autoStart = isMiniature(); // used for nice miniature in CodePen
-    
+    // eslint-disable-next-line
     let x = new Puzzle ( {img: img,
                           width: window.innerWidth,
                           height: window.innerHeight,
                           idiv: "forPuzzle" });
-     
+                          // eslint-disable-next-line
 },[])
 
     return(

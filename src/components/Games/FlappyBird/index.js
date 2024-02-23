@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import './flappy.css'
+// eslint-disable-next-line
 import { Navigate } from 'react-router-dom';
 
 export default function FlappyBird(){
