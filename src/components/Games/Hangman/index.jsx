@@ -1,12 +1,11 @@
+import ButtonBox from '../../1_Assets/MainAssets/ButtonBox.png';
+import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import './styles.scss';
 import $ from 'jquery';
-import { Navigate } from 'react-router-dom';
+// import { Navigate } from 'react-router-dom';
 
 const HangmanGame = () => {
-
-  var navigate = Navigate()
-
 
 
 	// eslint-disable-next-line 
@@ -230,7 +229,7 @@ const HangmanGame = () => {
 	// eslint-disable-next-line 
   }, []); // Run only once when the component mounts
   return (
-    <div className='mainhangman' style={{marginTop: '-40px'}}>
+    <div className='mainhangman'>
       <div class="hangman">
         <div class="hangman-results">
           <div class="hangman-hangman">
@@ -252,6 +251,15 @@ const HangmanGame = () => {
         <div class="hangman-letters">
         </div>
       </div>
+
+      <Link to="/" style={{ textDecoration: 'none', zIndex: '3', position: 'absolute', bottom: '10px', left: '10px', background: 'red' }}>
+        <button style={{position: 'absolute', bottom: '10px', left: '10px', marginTop: '80px', backgroundColor: 'transparent', border: 'none', height: '40px', width: '200px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${ButtonBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'grab', fontSize: '20px', color: 'white'}} > MAIN </button>
+      </Link>
+
+      <Link to="/Dashboard" style={{ textDecoration: 'none', zIndex: '3', position: 'absolute', bottom: '10px', right: '10px', background: 'red' }}>
+        <button style={{position: 'absolute', bottom: '10px', right: '10px',  marginTop: '80px', backgroundColor: 'transparent', border: 'none', height: '40px', width: '200px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${ButtonBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'grab', fontSize: '20px', color: 'white' }} > RETURN </button>
+      </Link>
+      
     </div>
   );
 };

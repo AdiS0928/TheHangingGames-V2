@@ -188,15 +188,14 @@ class Card extends React.Component {
 
   render() {
     return (
-      <div
-        className={'card' + (!this.props.close ? ' opened' : '') + (this.props.complete ? ' matched' : '')}
-        onClick={() => this.clicked(this.props.framework)}
-      >
-        <div className="front">?</div>
-        <div className="back">
-          <img src={`https://raw.githubusercontent.com/AdiS0928/TheHangingGames-V2/main/src/components/1_Assets/GameAssets/MemoryGame/${this.props.framework}.png`} alt={this.props.framework} />
+      <>
+        <div className={'card' + (!this.props.close ? ' opened' : '') + (this.props.complete ? ' matched' : '')} onClick={() => this.clicked(this.props.framework)}>
+          <div className="front">?</div>
+          <div className="back">
+            <img src={`https://raw.githubusercontent.com/AdiS0928/TheHangingGames-V2/main/src/components/1_Assets/GameAssets/MemoryGame/${this.props.framework}.png`} alt={this.props.framework} />
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }

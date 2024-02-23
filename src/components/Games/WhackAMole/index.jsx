@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles.css'; 
@@ -11,8 +12,6 @@ const WhackAMoleGame = () => {
   const [remainingTime, setRemainingTime] = useState(30); 
   const [buttonDisabled, setButtonDisabled] = useState(false);
   const navigate = useNavigate();
-
-
 
   useEffect(() => {
     const holes = document.querySelectorAll('.hole');
@@ -88,8 +87,16 @@ const WhackAMoleGame = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> 
       <button id='StartGame' onClick={startGame} disabled={buttonDisabled} style={{ marginTop: '80px', backgroundColor: 'transparent', border: 'none', height: '90px', width: '370px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${ButtonBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'grab', fontSize: '30px', color: 'white', visibility: buttonDisabled ? 'hidden' : 'visible' }} > START </button>
+
+      <Link to="/" style={{ textDecoration: 'none', zIndex: '3', position: 'absolute', bottom: '10px', left: '10px', background: 'red' }}>
+        <button style={{position: 'absolute', bottom: '10px', left: '10px', marginTop: '80px', backgroundColor: 'transparent', border: 'none', height: '40px', width: '200px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${ButtonBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'grab', fontSize: '20px', color: 'white'}} > MAIN </button>
+      </Link>
+
+      <Link to="/Dashboard" style={{ textDecoration: 'none', zIndex: '3', position: 'absolute', bottom: '10px', right: '10px', background: 'red' }}>
+        <button style={{position: 'absolute', bottom: '10px', right: '10px',  marginTop: '80px', backgroundColor: 'transparent', border: 'none', height: '40px', width: '200px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${ButtonBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'grab', fontSize: '20px', color: 'white' }} > RETURN </button>
+      </Link>
     </div>
   );
 };
