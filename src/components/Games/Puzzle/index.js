@@ -10,14 +10,23 @@ export default function Puzzle(){
 
 
     useEffect(()=>{
+
+      
       
       "use strict";
+      var time = 120
       const startCountdown = () => {
         const countdownInterval = setInterval(() => {
           setRemainingTime((prevTime) => prevTime - 1);
-          if (remainingTime === 0) {
+          time = time - 1;
+          if (time === 0) {
             clearInterval(countdownInterval);
           }
+
+          if(time<=0){
+            navigate('/gameover')
+          }
+       
         }, 1000);
 
       };
@@ -100,9 +109,8 @@ export default function Puzzle(){
         params.lines[0].func()
         setTimeout(()=>{
           startCountdown();
-          setTimeout(()=>{
-            navigate('/GameOver')
-          },remainingTime*1000)
+          // setTimeout(()=>{
+          // },remainingTime*1000)
         },3000)
         document.getElementById('divmenu').style.display = 'none'
       });
