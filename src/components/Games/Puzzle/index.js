@@ -1,3 +1,6 @@
+import ButtonBox from '../../1_Assets/MainAssets/ButtonBox.png';
+import { Link } from 'react-router-dom';
+
 import { useEffect } from 'react'
 import './puzzle.css'
 import imageP from '../../1_Assets/GameAssets/Puzzle/Puzzle.jpg'
@@ -1576,14 +1579,23 @@ export default function Puzzle(){
 
     return(
 
-        <div style={{width:'100vw',height:'100vh',justifyContent:'center',alignItems:'center'}}>
-            <div  id="forPuzzle">
+        <div style={{width:'100vw',height:'100vh',justifyContent:'center',alignItems:'center', background: '#0099FF'}}>
 
-            </div>
+          <div  id="forPuzzle">
+          </div>
 
-            <div style={{position:'absolute',bottom:'0',left:'0'}}>
-              <h1 className="score" style={{fontWeight: '300'}}>TIME REMAINING: <span className="TRemain">{remainingTime}</span></h1>
-            </div>
+          <div style={{display: 'flex', justifyContent: 'flex-start', alignItems: 'center', position:'absolute' ,bottom:'0',left:'0', margin: '0', width: '1000px'}}>
+            <Link to="/" style={{ textDecoration: 'none', zIndex: '3', marginLeft: '20px', marginBottom: '10px' }}>
+              <button style={{ backgroundColor: 'transparent', border: 'none', height: '40px', width: '200px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${ButtonBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'grab', fontSize: '20px', color: 'white'}} > MAIN </button>
+            </Link>
+
+            <Link to="/Dashboard" style={{ textDecoration: 'none', zIndex: '3', marginLeft: '20px', marginBottom: '10px'}}>
+              <button style={{ backgroundColor: 'transparent', border: 'none', height: '40px', width: '200px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${ButtonBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'grab', fontSize: '20px', color: 'white' }} > RETURN </button>
+            </Link>
+
+            <h1 className="score" style={{fontWeight: '300', marginLeft: '20px', fontSize: '30px'}}>TIME REMAINING: <span className="TRemain">{remainingTime}</span></h1>
+          </div>
+          
         </div>
 
     )

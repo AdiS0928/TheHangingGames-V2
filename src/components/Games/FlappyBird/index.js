@@ -1,3 +1,5 @@
+import ButtonBox from '../../1_Assets/MainAssets/ButtonBox.png';
+import { Link } from 'react-router-dom';
 import { useEffect } from 'react'
 import './flappy.css'
 // eslint-disable-next-line
@@ -753,22 +755,13 @@ animate();
       <div class="container">
       <canvas id="grid"></canvas>
     
-      {/* <footer>
-        <div class="footer_container">
-          <p>
-            Flappybird
-            <span>&#64;</span> 2023
-          </p>
-          <div class="mode_container">
-            <span>Light</span>
-            <div class="btn_container">
-              <button class="btn">
-                <div class="circle"></div>
-              </button>
-            </div>
-          </div>
-        </div>
-      </footer> */}
+      <Link to="/" style={{ textDecoration: 'none', zIndex: '3', position: 'absolute', bottom: '10px', left: '10px', background: 'red' }}>
+        <button style={{position: 'absolute', bottom: '10px', left: '10px', marginTop: '80px', backgroundColor: 'transparent', border: 'none', height: '40px', width: '200px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${ButtonBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'grab', fontSize: '20px', color: 'white'}} > MAIN </button>
+      </Link>
+
+      <Link to="/Dashboard" style={{ textDecoration: 'none', zIndex: '3', position: 'absolute', bottom: '10px', right: '10px', background: 'red' }}>
+        <button style={{position: 'absolute', bottom: '10px', right: '10px',  marginTop: '80px', backgroundColor: 'transparent', border: 'none', height: '40px', width: '200px', backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: `url('${ButtonBox}')`, display: 'flex', justifyContent: 'center', alignItems: 'center', cursor: 'grab', fontSize: '20px', color: 'white' }} > RETURN </button>
+      </Link>
     </div>
     )
 }
