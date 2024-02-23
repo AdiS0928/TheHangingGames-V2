@@ -229,7 +229,7 @@ const HangmanGame = () => {
 	// eslint-disable-next-line 
   }, []); // Run only once when the component mounts
   return (
-    <div className='mainhangman'>
+    <div className='mainhangman' style={{marginTop: '-60px'}}>
       <div class="hangman">
         <div class="hangman-results">
           <div class="hangman-hangman">
