@@ -33,7 +33,7 @@ class PlayGround extends React.Component {
       randomizedFrameworks: [],
       finalizedFrameworks: [],
       openedFrameworks: [],
-      timeRemaining: 500,
+      timeRemaining: 800,
     };
     this.start();
   }
@@ -69,7 +69,7 @@ class PlayGround extends React.Component {
 
     if (finalizedFrameworks.every((card) => card.complete)) {
       this.props.navigate('/GameOver');
-      alert('Congratulations! You have won!');
+      // alert('Congratulations! You have won!');
     } else {
       if (
         this.state.openedFrameworks[0].name === this.state.openedFrameworks[1].name &&
@@ -91,7 +91,9 @@ class PlayGround extends React.Component {
 
   start() {
     let finalizedFrameworks = [];
+    // eslint-disable-next-line
     this.state.duplicatedFrameworks = this.state.frameworks.concat(this.state.frameworks);
+    // eslint-disable-next-line
     this.state.randomizedFrameworks = this.shuffle(this.state.duplicatedFrameworks);
     this.state.randomizedFrameworks.forEach((name, index) => {
       finalizedFrameworks.push({
@@ -101,6 +103,7 @@ class PlayGround extends React.Component {
         fail: false,
       });
     });
+    // eslint-disable-next-line
     this.state.finalizedFrameworks = finalizedFrameworks;
     this.startTimer();
   }
@@ -141,7 +144,7 @@ class PlayGround extends React.Component {
         if (this.state.finalizedFrameworks.every((card) => card.complete)) {
           clearInterval(checkWinnerInterval); // Stop the interval once the player wins
           this.props.navigate('/GameOver');
-          alert('Congratulations! You have won!');
+          // alert('Congratulations! You have won!');
         }
       }, 500);
     }
