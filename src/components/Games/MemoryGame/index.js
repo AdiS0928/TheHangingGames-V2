@@ -33,7 +33,7 @@ class PlayGround extends React.Component {
       randomizedFrameworks: [],
       finalizedFrameworks: [],
       openedFrameworks: [],
-      timeRemaining: 200,
+      timeRemaining: 300,
     };
     this.start();
   }
@@ -144,7 +144,7 @@ class PlayGround extends React.Component {
 
     // Check for all cards with opacity .2
     const allCards = document.querySelectorAll('.card');
-    const allCardsMatched = Array.from(allCards).every(card => card.style.opacity === '0.2');
+    const allCardsMatched = Array.from(allCards).every(card => card.style.opacity === '0.3');
     
     if (allCardsMatched) {
       this.props.navigate('/Dashboard');
