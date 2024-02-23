@@ -14,6 +14,7 @@ import Puzzle from './components/Games/Puzzle';
 import TicTacToe from './components/Games/TicTacToe';
 
 import GameOver from './components/GameOver';
+import YouWin from './components/YouWin';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route exact path="/TicTacToe" element={<TicTacToe />} />
             
             <Route exact path="/GameOver" element={<GameOver />} />
+            <Route exact path="/YouWin" element={<YouWin />} />
           </Routes>
       </Router>
     </>
