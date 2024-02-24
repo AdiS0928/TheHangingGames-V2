@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { useEffect } from 'react'
 import './puzzle.css'
-import imageP from '../../1_Assets/GameAssets/Puzzle/Puzzle.jpg'
+import imageP from '../../1_Assets/GameAssets/Puzzle/Puzzle1.png'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
